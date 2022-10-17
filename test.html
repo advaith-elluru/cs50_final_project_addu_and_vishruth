@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-1">Test</h1>
+    <br>
+    <form>
+        <div class="mb-2">
+            <table style="margin:auto">
+                {% for number in range(numbers) %}
+                    <tr>
+                        <td>{{ range(min, (max + 1)) | random }}</td>
+                        <td>{{ decision }} </td>
+                        <td>{{ range(min, (max + 1)) | random }}</td>
+                        <td>=</td>
+                        <td><input autocomplete="off" class="form-control mx-auto" id="{{ number }}" placeholder="Answer" type="number"></td>
+                        <td style="display:none"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}
