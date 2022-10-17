@@ -7,7 +7,8 @@ from functools import wraps
 hi
 
 def credit(credit):
-    wh
+    if credit.isdigits() == False:
+        return apology("invalid number")
     n = len(credit)
     answer = True
     simpleadd = 0
