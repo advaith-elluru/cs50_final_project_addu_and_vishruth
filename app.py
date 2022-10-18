@@ -19,6 +19,11 @@ Session(app)
 db = SQL("sqlite:///math.db")
 
 
+@app.before_request
+def before_request():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=60)
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
