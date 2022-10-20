@@ -3,6 +3,8 @@ from flask import Flask, redirect, request, render_template, session
 from flask_session import Session
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
+from datetime import timedelta
+from helpers import apology, credit, login_required
 
 # COnfigure application
 app = Flask(__name__)
@@ -198,3 +200,21 @@ def past_results():
             return apology("You didn't take any tests", 404)
         hi = len(rows)
         return render_template("choose.html", rows = len(rows))
+    
+
+@app.route("/credit", methods=["GET", "POST"])
+@login_required
+def check_credit():
+    if request.method == "POST":
+        credit_num = request.form.get("credit")
+        if not credit or credit.isdigit() == False:
+            return apology("Please enter proper credit card number", 400)
+        else:
+            check = credit(credit_num)
+            if check == "INVALID":
+                return apology("This number is either incorrect or unaccepted", 400)
+            else:
+#               db.execute("INSERT INTO credit_cards (id, credit_card) VALUES (?, ?)", session["user_id"], credit_num)
+                return render_template("accepted_credit.html")
+    else:
+        return render_template("credit.html")
