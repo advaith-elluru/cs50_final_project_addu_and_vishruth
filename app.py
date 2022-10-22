@@ -214,7 +214,7 @@ def check_credit():
             if check == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-#               db.execute("INSERT INTO credit_cards (id, credit_card) VALUES (?, ?)", session["user_id"], credit_num)
+                db.execute("INSERT INTO Credit (id, credit_number) VALUES (?, ?)", session["user_id"], credit_num)
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
