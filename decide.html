@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Decide
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-1">Decide</h1>
+    <br>
+    <form action="/test" method="post">
+        <div class="mb-2">
+            <input autocomplete="off" class="form-control mx-auto" style="width:50%" id="min" name="min" placeholder="What is the least number you want to have in your test?" type="number">
+        </div>
+        <div class="mb-2">
+            <input autocomplete="off" class="form-control mx-auto" style="width:50%" id="max" name="max" placeholder="What is the greatest number you want to have in your test?" type="number">
+        </div>
+        <div class="mb-2" style="transform:translate(25%, 0%)" action="/test" method="post">
+            <select name="decision" class="form-select" style="width:50%">
+                <option selected disabled>Select</option>
+                <option value="+">Addition</option>
+                <option value="-">Subtraction</option>
+                <option value="x">Multiplication</option>
+                <option value="/">Division</option>
+            </select>
+        </div>
+        <div class="mb-2">
+            <input autocomplete="off" class="form-control mx-auto" style="width:50%" id="number" name="number" placeholder="How many problems do you want to see" type="number">
+        </div>
+        <div class="mb-2">
+            <button class="btn btn-primary" type="submit">Decide</button>
+        </div>
+    </form>
+{% endblock %}
