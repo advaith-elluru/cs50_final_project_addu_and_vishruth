@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <div class="card text-bg-light text-center" style="margin:auto; width:70%; font-family:'Comic Sans MS'; font-size:27px">
+        <img src="/static/img/try_again.jpg" class="card-image" alt="Try Again" width="100%" height="100%" style="margin:auto">
+        <div class="card-img-overlay">
+            <p class="card-text">{{ code }}</p>
+            <p class="card-text">{{ message }}</p>
+        </div>
+    </div>
+{% endblock %}
