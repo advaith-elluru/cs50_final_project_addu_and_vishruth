@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Past results
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-1">Past Results</h1>
+    <br>
+    <table>
+        <tr>
+            <th>Number of Questions</th>
+            <th>Questions Correct</th>
+            <th>Percentage Correct</th>
+            <th>Time Taken</th>
+            <th>When Test Was Taken</th>
+        </tr>
+        {% for row in rows %}
+            <tr>
+                <td>{{ row["number_of_questions"] }}</td>
+                <td>{{ row["questions_correct"] }}</td>
+                <td>{{ row["percent_correct"] }}</td>
+                <td>{{ row["time"] }}</td>
+                <td>{{ row["datetime"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
