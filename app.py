@@ -24,7 +24,7 @@ db = SQL("sqlite:///math.db")
 @app.before_request
 def before_request():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=60)
+    app.permanent_session_lifetime = timedelta(minutes=120)
 
 def login_required(f):
     @wraps(f)
@@ -200,7 +200,7 @@ def past_results():
             return apology("You didn't take any tests", 404)
         hi = len(rows)
         return render_template("choose.html", rows = len(rows))
-    
+
 
 @app.route("/credit", methods=["GET", "POST"])
 @login_required
