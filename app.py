@@ -165,6 +165,30 @@ def test():
     else:
         return render_template("decide.html")
 
+@app.route("/etest", methods=["GET", "POST"])
+@login_required
+def eng_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!", 404)
+    else:
+        return render_template("english.html")
+
+@app.route("/stest", methods=["GET", "POST"])
+@login_required
+def sci_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!",404)
+    else:
+        return render_template("science.html")
+
+@app.route("/wtest", methods=["GET", "POST"])
+@login_required
+def ws_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!",404)
+    else:
+        return render_template("WS.html")
+
 @app.route("/past_results", methods=["GET", "POST"])
 @login_required
 def past_results():

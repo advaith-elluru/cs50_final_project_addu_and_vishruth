@@ -5,14 +5,21 @@
 {% endblock %}
 
 {% block main %}
-    <h2> English </h2>
+    <h1 class="display-1"> English </h1>
     <table>
-        <tbody>
+        <tbody >
             {% for row in rows %}
                 <tr>
                 <!--  All the tests should show up here. We will insert them via jinja loop and python databases.-->
                 </tr>
             {% endfor %}
+            <tr>
+                <form action="/etest" method="post">
+                    <div class="mb-2">
+                        <button class="btn btn-primary" type="submit">Decide</button>
+                    </div>
+                </form>
+            </tr>
         </tbody>
     </table>
 {% endblock %}
