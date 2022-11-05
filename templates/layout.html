@@ -25,11 +25,16 @@
             <div class="collapse navbar-collapse">
                 {% if session["user_id"] %}
                     <ul class="navbar-nav me-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/test">Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/test">Math Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/etest">English Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/stest">Science Test</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/wtest">SS Test</a></li>
                         <li class="nav-item"><a class="nav-link" href="/past_results">Past Results</a></li>
                     </ul>
                     <ul class="navbar-nav ms-auto mt-2">
                         <li class="nav-item"><a class="nav-link" href="/change_password">Change Password</a></li>
+                        <!-- credit card add -->
+                        <li class="nav-item"><a class="nav-link" href="/credit">Add Credit Card</a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                     </ul>
                 {% else %}

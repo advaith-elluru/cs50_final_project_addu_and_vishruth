@@ -4,7 +4,7 @@ from flask_session import Session
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import timedelta
-from helpers import apology, credit, login_required
+from helpers import apology, check_credit, login_required
 
 # COnfigure application
 app = Flask(__name__)
@@ -24,7 +24,7 @@ db = SQL("sqlite:///math.db")
 @app.before_request
 def before_request():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=60)
+    app.permanent_session_lifetime = timedelta(minutes=120)
 
 def login_required(f):
     @wraps(f)
@@ -165,6 +165,30 @@ def test():
     else:
         return render_template("decide.html")
 
+@app.route("/etest", methods=["GET", "POST"])
+@login_required
+def eng_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!", 404)
+    else:
+        return render_template("english.html")
+
+@app.route("/stest", methods=["GET", "POST"])
+@login_required
+def sci_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!",404)
+    else:
+        return render_template("science.html")
+
+@app.route("/wtest", methods=["GET", "POST"])
+@login_required
+def ws_test():
+    if request.method == "POST":
+        return apology("No tests to take right now!",404)
+    else:
+        return render_template("WS.html")
+
 @app.route("/past_results", methods=["GET", "POST"])
 @login_required
 def past_results():
@@ -200,21 +224,22 @@ def past_results():
             return apology("You didn't take any tests", 404)
         hi = len(rows)
         return render_template("choose.html", rows = len(rows))
-    
+
 
 @app.route("/credit", methods=["GET", "POST"])
 @login_required
-def check_credit():
+def credit_check():
     if request.method == "POST":
         credit_num = request.form.get("credit")
-        if not credit or credit.isdigit() == False:
+        if not credit_num or credit_num.isdigit() == False:
             return apology("Please enter proper credit card number", 400)
         else:
-            check = credit(credit_num)
+            check = check_credit(credit_num)
             if check == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("INSERT INTO Credit (id, credit_number) VALUES (?, ?)", session["user_id"], credit_num)
+                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session["user_id"])
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
+# jsdkjfk
