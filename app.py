@@ -242,3 +242,4 @@ def credit_check():
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
+# jsdkjfk
