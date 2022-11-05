@@ -4,7 +4,7 @@ from flask_session import Session
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import timedelta
-from helpers import apology, credit, login_required
+from helpers import apology, check_credit, login_required
 
 # COnfigure application
 app = Flask(__name__)
@@ -234,7 +234,7 @@ def check_credit():
         if not credit or credit.isdigit() == False:
             return apology("Please enter proper credit card number", 400)
         else:
-            check = credit(credit_num)
+            check = check_credit(credit_num)
             if check == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
