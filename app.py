@@ -238,7 +238,7 @@ def credit_check():
             if check == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("UPDATE users (credit_number) VALUES (?) WHERE id = ?", credit_num, session["user_id"])
+                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session["user_id"])
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
