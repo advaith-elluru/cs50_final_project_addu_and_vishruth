@@ -228,7 +228,7 @@ def past_results():
 
 @app.route("/credit", methods=["GET", "POST"])
 @login_required
-def check_credit():
+def credit_check():
     if request.method == "POST":
         credit_num = request.form.get("credit")
         if not credit_num or credit_num.isdigit() == False:
@@ -238,7 +238,7 @@ def check_credit():
             if check == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("INSERT INTO users (credit_number) VALUES (?) WHERE id = ?", credit_num, session["user_id"])
+                db.execute("UPDATE users (credit_number) VALUES (?) WHERE id = ?", credit_num, session["user_id"])
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")

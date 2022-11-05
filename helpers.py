@@ -16,7 +16,7 @@ def apology(message, code):
     return render_template("apology.html", message = message, code = code)
 
 def check_credit(credit):
-    if credit.isdigits() == False:
+    if credit.isdigit() == False:
         return apology("invalid number")
     n = len(credit)
     answer = True
