@@ -231,7 +231,7 @@ def past_results():
 def check_credit():
     if request.method == "POST":
         credit_num = request.form.get("credit")
-        if not credit or credit.isdigit() == False:
+        if not credit_num or credit_num.isdigit() == False:
             return apology("Please enter proper credit card number", 400)
         else:
             check = check_credit(credit_num)
