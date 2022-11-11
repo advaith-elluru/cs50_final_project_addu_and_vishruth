@@ -242,4 +242,9 @@ def credit_check():
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
-# jsdkjfk
+
+
+@app.route("/extra_links", methods=["GET"])
+@login_required
+def extra_links():
+    return render_template("extra.html")
