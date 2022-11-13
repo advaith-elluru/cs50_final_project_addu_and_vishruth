@@ -19,6 +19,7 @@ def check_credit(credit):
     if credit.isdigit() == False
         return apology("invalid number")
     n = len(credit)
+    # checks if legit
     if n < 10:
         return apology("not a credit number")
     answer = True
