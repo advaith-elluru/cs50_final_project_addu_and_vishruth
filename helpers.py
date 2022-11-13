@@ -19,6 +19,8 @@ def check_credit(credit):
     if credit.isdigit() == False:
         return apology("invalid number")
     n = len(credit)
+    if n < 10:
+        return apology("not a credit number")
     answer = True
     simpleadd = 0
     multiby2 = 0
@@ -76,4 +78,4 @@ def check_credit(credit):
 
     else:
         print("INVALID")
-# Hello sjktj l 
+# Hello sjktj l
