@@ -68,14 +68,14 @@ def check_credit(credit):
         return False
 
     elif n == 15 and (int(doubledigit) == 37 or int(doubledigit) == 34):
-            return ("AMEX")
+            return "AMEX"
 
     elif int(firstDigit) == 4:
         if n == 13 or n == 16:
-            return ("VISA")
+            return "VISA"
 
     elif n == 16 and 51 <= int(doubledigit) and int(doubledigit) <= 55:
-        return ("MASTERCARD")
+        return "MASTERCARD"
 
     else:
         return False
