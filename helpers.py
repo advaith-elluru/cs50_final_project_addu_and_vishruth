@@ -17,11 +17,11 @@ def apology(message, code):
 
 def check_credit(credit):
     if credit.isdigit() == False:
-        return
+        return False
     n = len(credit)
     # checks if legit
     if n < 10:
-        return
+        return False
     answer = True
     simpleadd = 0
     multiby2 = 0
