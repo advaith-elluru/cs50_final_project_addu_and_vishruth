@@ -17,11 +17,11 @@ def apology(message, code):
 
 def check_credit(credit):
     if credit.isdigit() == False:
-        return apology("invalid number")
+        return apology("invalid number", 400)
     n = len(credit)
     # checks if legit
     if n < 10:
-        return apology("not a credit number", )
+        return apology("not a credit number", 400)
     answer = True
     simpleadd = 0
     multiby2 = 0
@@ -65,7 +65,7 @@ def check_credit(credit):
 
     # gives last results of INVALID or AMEX or VISA or MASTERCARD based on #of digits and starting digits if valid
     if answer == False:
-        return apology("INVALID")
+        return ("INVALID")
 
     elif n == 15 and (int(doubledigit) == 37 or int(doubledigit) == 34):
             return ("AMEX")
@@ -78,5 +78,5 @@ def check_credit(credit):
         return ("MASTERCARD")
 
     else:
-        return apology("INVALID")
+        return ("INVALID")
 # Hello sjktj l

@@ -234,8 +234,8 @@ def credit_check():
         if not credit_num or credit_num.isdigit() == False:
             return apology("Please enter proper credit card number", 400)
         else:
-            check = check_credit(credit_num)
-            if check == "INVALID":
+
+            if check_credit(credit_num) == "INVALID":
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
                 db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session["user_id"])
