@@ -10,7 +10,7 @@ function choose()
 
 function test()
 {
-
+    
 }
 
 document.addEventListener("DOMContentLoaded", function () {
