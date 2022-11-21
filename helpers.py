@@ -17,12 +17,15 @@ def apology(message, code):
 
 def check_credit(credit):
     if credit.isdigit() == False:
+<<<<<<< HEAD
         return apology("invalid number")
+=======
+        return False
+>>>>>>> 9c7e16eb77b1199d9922b8ec1e0687154110f9e2
     n = len(credit)
     # checks if legit
-    # k
     if n < 10:
-        return apology("not a credit number")
+        return False
     answer = True
     simpleadd = 0
     multiby2 = 0
@@ -66,18 +69,18 @@ def check_credit(credit):
 
     # gives last results of INVALID or AMEX or VISA or MASTERCARD based on #of digits and starting digits if valid
     if answer == False:
-        print("INVALID")
+        return False
 
     elif n == 15 and (int(doubledigit) == 37 or int(doubledigit) == 34):
-            print("AMEX")
+            return "AMEX"
 
     elif int(firstDigit) == 4:
         if n == 13 or n == 16:
-            print("VISA")
+            return "VISA"
 
     elif n == 16 and 51 <= int(doubledigit) and int(doubledigit) <= 55:
-        print("MASTERCARD")
+        return "MASTERCARD"
 
     else:
-        print("INVALID")
+        return False
 # Hello sjktj l
