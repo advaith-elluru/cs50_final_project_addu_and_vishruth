@@ -16,8 +16,8 @@
                         <td>{{ decision }} </td>
                         <td>{{ range(min, (max + 1)) | random }}</td>
                         <td>=</td>
-                        <td><input autocomplete="off" class="form-control mx-auto" id="{{ number }}" placeholder="Answer" type="number"></td>
-                        <td style="display:none"></td>
+                        <td><input autocomplete="off" class="form-control mx-auto" class="client_answer" id="{{ number }}" placeholder="Answer" type="number"></td>
+                        <td style="display:none" class="answer"></td>
                     </tr>
                 {% endfor %}
             </table>
