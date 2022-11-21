@@ -12,7 +12,8 @@ function test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        var client_answer = $(this).find()
+        var client_answer = $(this).find(".client_answer");
+        var answer = 
     });
 }
 
