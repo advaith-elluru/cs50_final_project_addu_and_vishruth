@@ -12,8 +12,8 @@ function test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        var client_answer = $(this).find(".client_answer");
-        var answer = $(this).find(".answer")
+        var client_answer = $(this).find(".client_answer").text;
+        var answer = $(this).find(".answer").text;
 
         if (client_answer == answer)
         {
