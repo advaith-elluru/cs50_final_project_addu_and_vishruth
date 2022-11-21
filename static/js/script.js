@@ -25,6 +25,7 @@ function test()
             $(this ".client_answer").css("background-color":"red")
         }
     });
+    alert(correct);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
