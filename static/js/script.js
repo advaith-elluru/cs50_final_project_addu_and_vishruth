@@ -10,9 +10,9 @@ function choose()
 
 function test()
 {
-    var correct
+    var correct = 0;
     $("#table tr").each(function() {
-        
+        var client_answer = 
     });
 }
 
