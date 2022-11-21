@@ -17,11 +17,7 @@ def apology(message, code):
 
 def check_credit(credit):
     if credit.isdigit() == False:
-<<<<<<< HEAD
         return apology("invalid number")
-=======
-        return False
->>>>>>> 9c7e16eb77b1199d9922b8ec1e0687154110f9e2
     n = len(credit)
     # checks if legit
     if n < 10:
