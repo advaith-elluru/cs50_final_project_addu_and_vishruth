@@ -10,7 +10,7 @@ function choose()
 
 function test()
 {
-    
+    var correct 
     $("#table tr").each(function() {
 
     });
