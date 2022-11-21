@@ -12,7 +12,7 @@ function test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        var client_answer = 
+        var client_answer = $(this).find
     });
 }
 
