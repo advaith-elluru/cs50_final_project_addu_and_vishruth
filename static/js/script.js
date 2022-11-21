@@ -10,7 +10,9 @@ function choose()
 
 function test()
 {
-    
+    $("#table tr").each(function() {
+        
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {

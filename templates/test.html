@@ -9,9 +9,9 @@
     <br>
     <form>
         <div class="mb-2">
-            <table style="margin:auto">
+            <table style="margin:auto" id="table">
                 {% for number in range(numbers) %}
-                    <tr id="table">
+                    <tr>
                         <td>{{ range(min, (max + 1)) | random }}</td>
                         <td>{{ decision }} </td>
                         <td>{{ range(min, (max + 1)) | random }}</td>
