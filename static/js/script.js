@@ -17,7 +17,12 @@ function test()
 
         if (client_answer == answer)
         {
-            $(this)
+            $(this ".client_answer").css("background-color":"green");
+            correct++;
+        }
+        else
+        {
+            $(this ".client_answer").css("background-color":"red")
         }
     });
 }
