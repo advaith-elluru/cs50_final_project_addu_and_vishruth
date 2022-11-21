@@ -17,7 +17,7 @@ function test()
 
         if (client_answer == answer)
         {
-            
+            $(this)
         }
     });
 }
