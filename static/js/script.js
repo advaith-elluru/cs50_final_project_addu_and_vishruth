@@ -17,7 +17,7 @@ function test()
 
         if (client_answer == answer)
         {
-            $(this ".client_answer").css("background-color":"green");
+            $(this ".client_answer").css("background-color: green");
             correct++;
         }
         else
