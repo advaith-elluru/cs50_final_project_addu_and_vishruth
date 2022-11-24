@@ -29,7 +29,7 @@ function check_test()
         {
             var color = $this.eq(4).css("background-color");
             alert(color);
-            $this.css("background-color: red");
+            $this.eq(4).css("background-color: red");
         }
     });
     alert(correct);
