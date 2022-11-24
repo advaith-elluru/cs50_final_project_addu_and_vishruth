@@ -20,14 +20,14 @@ function check_test()
 
         if (client_answer == answer)
         {
-            var color = $(this).eq(4).css("background-color");
+            var color = $this.css("background-color");
             alert(color);
             $this.css("background-color: green");
             correct++;
         }
         else
         {
-            var color = $(this).eq(4).css("background-color");
+            var color = $this.css("background-color");
             alert(color);
             $this.css("background-color: red");
         }
