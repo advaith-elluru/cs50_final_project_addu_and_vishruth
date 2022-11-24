@@ -11,7 +11,15 @@
         <tbody >
             <tr>
                 <form action="/etest" method="post">
-                    <div class="mb-2" style="transform:translate(25%, 0%)" action="/test" method="post">
+                    <div class="mb-2" style="transform:translate(25%, 0%)">
+                        <select name="decision" class="form-select" style="width:50%">
+                            <option selected disabled>Select type</option>
+                            <option value="1">Error Correcter</option>
+                            <option value="2">Reading</option>
+                            <option value="3">Writing prompt</option>
+                        </select>
+                    </div>
+                    <div class="mb-2" style="transform:translate(25%, 0%)" >
                         <select name="decision" class="form-select" style="width:50%">
                             <option selected disabled>Select difficulty</option>
                             <option value="1">Easy</option>
