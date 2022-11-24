@@ -8,21 +8,21 @@ function choose()
     }
 }
 
-function test()
+function check_test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        var client_answer = $(this).find(".client_answer").text;
+        var client_answer = $(this).find("#client_answer").text;
         var answer = $(this).find(".answer").text;
 
         if (client_answer == answer)
         {
-            $(this ".client_answer").css("background-color: green");
+            $(this).find("#client_answer").css("background-color: green");
             correct++;
         }
         else
         {
-            $(this ".client_answer").css("background-color":"red")
+            $(this).find("#client_answer").css("background-color":"red")
         }
     });
     alert(correct);

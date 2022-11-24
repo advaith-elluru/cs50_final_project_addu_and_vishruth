@@ -16,14 +16,14 @@
                         <td>{{ decision }} </td>
                         <td>{{ range(min, (max + 1)) | random }}</td>
                         <td>=</td>
-                        <td><input autocomplete="off" class="form-control mx-auto" class="client_answer" id="{{ number }}" placeholder="Answer" type="number"></td>
+                        <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
                         <td style="display:none" class="answer">0</td>
                     </tr>
                 {% endfor %}
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" type="button" onclick="test()">Submit</button>
+            <button class="btn btn-primary" type="button" onclick="check_test()">Submit</button>
         </div>
     </form>
 {% endblock %}
