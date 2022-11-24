@@ -1,7 +1,7 @@
 TEXTS TO USE FOR EVERY TYPE OF CONFIG FOR ENGLISH TEST
 1. Error-correcter
     a. easy
-        
+        test of 1
     b.mid
 
     c.hard
