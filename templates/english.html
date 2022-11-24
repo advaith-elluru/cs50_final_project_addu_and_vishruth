@@ -10,21 +10,22 @@
     <table>
         <tbody >
             <tr>
+                <!-- ask for preferences in the test -->
                 <form action="/etest" method="post">
                     <div class="mb-2" style="transform:translate(25%, 0%)">
-                        <select name="decision" class="form-select" style="width:50%">
+                        <select name="type" class="form-select" style="width:50%">
                             <option selected disabled>Select type</option>
-                            <option value="1">Error Correcter</option>
-                            <option value="2">Reading</option>
-                            <option value="3">Writing prompt</option>
+                            <option value="corrector">Error Correcter</option>
+                            <option value="reading">Reading</option>
+                            <option value="writing">Writing prompt</option>
                         </select>
                     </div>
                     <div class="mb-2" style="transform:translate(25%, 0%)" >
-                        <select name="decision" class="form-select" style="width:50%">
+                        <select name="difficulty" class="form-select" style="width:50%">
                             <option selected disabled>Select difficulty</option>
-                            <option value="1">Easy</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Hard</option>
+                            <option value="easy">Easy</option>
+                            <option value="mid">Medium</option>
+                            <option value="hard">Hard</option>
                         </select>
                     </div>
                     <div class="mb-2">
