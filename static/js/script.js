@@ -12,8 +12,10 @@ function check_test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        var client_answer = $(this).find("#client_answer").val;
+        var client_answer = $(this).find("#client_answer").val();
+        alert(client_answer);
         var answer = $(this).find(".answer").text;
+        alert(answer);
 
         if (client_answer == answer)
         {
