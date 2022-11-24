@@ -22,7 +22,7 @@ function check_test()
         }
         else
         {
-            $(this).find("#client_answer").css("background-color":"red")
+            $(this).find("#client_answer").css("background-color: red");
         }
     });
     alert(correct);
