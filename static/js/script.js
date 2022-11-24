@@ -19,12 +19,12 @@ function check_test()
 
         if (client_answer == answer)
         {
-            $(this).find("#client_answer").css("background-color: green");
+            $(this).eq(4).css("background-color: green");
             correct++;
         }
         else
         {
-            $(this).find("#client_answer").css("background-color: red");
+            $(this).eq(4).css("background-color: red");
         }
     });
     alert(correct);
