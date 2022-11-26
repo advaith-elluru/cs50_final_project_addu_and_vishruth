@@ -27,7 +27,6 @@ function check_test()
             $client_input.css("background-color", "red");
         }
     });
-    alert(correct);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
