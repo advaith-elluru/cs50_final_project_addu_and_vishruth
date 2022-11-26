@@ -11,21 +11,24 @@ function choose()
 function check_test()
 {
     var correct = 0;
-    
-    for (i = 0; i <)
     $("#table tr").each(function() {
         var client_answer = $(this).find("#client_answer").val();
         alert(client_answer);
         var answer = $(this).find(".answer").text;
         alert(answer);
+        var $this = $(this);
 
         if (client_answer == answer)
         {
-            $.eq(4)css("background-color: green");
+            var color = $this.eq(4).css("background-color");
+            alert(color);
+            $this.eq(4).css("background-color: green");
             correct++;
         }
         else
         {
+            var color = $this.eq(4).css("background-color");
+            alert(color);
             $this.eq(4).css("background-color: red");
         }
     });
