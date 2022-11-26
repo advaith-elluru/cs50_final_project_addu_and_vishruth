@@ -12,10 +12,10 @@ function check_test()
 {
     var correct = 0;
     $("#table tr").each(function() {
-        client_answer = $(this).eq(4).val();
-        answer = $(this).eq(5).text();
+        client_answer = $(this).find("#client_answer").val();
+        answer = $(this).find("#answer").text();
 
-        var $client_input = $(this).eq(4);
+        var $client_input = $(this).find("#client_answer");
 
         if (client_answer == answer)
         {
@@ -27,6 +27,7 @@ function check_test()
             $client_input.css("background-color", "red");
         }
     });
+    alert(correct);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
