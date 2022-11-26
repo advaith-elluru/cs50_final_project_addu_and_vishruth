@@ -19,7 +19,11 @@ function check_test()
 
         if (client_answer == answer)
         {
-            
+            correct++;
+        }
+        else
+        {
+            $client_input.css()
         }
     });
 }
