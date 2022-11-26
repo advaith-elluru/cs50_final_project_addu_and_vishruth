@@ -11,8 +11,8 @@ function choose()
 function check_test()
 {
     var correct = 0;
-    document.getElementById("")
-    for (i = 0; i < )
+    var table = document.getElementById("table");
+    for (i = 0; i < table.rows.length; i++)
         $("#table tr").each(function() {
             var client_answer = $(this).find("#client_answer").val();
             var answer = $(this).find(".answer").text();
