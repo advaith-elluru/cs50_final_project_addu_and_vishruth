@@ -10,24 +10,7 @@ function choose()
 
 function check_test()
 {
-    var correct = 0;
-    var table = document.getElementById("table");
-    for (i = 0; i < table.rows.length; i++)
-    {
-        var client_answer = $("#table").eq(i).eq(4).val();
-        var answer = $("#table").eq(i).eq(5).text();
-
-        if (client_answer == answer)
-        {
-            $("#table").eq(i).eq(4).css("background-color", "green");
-            correct++;
-        }
-        else
-        {
-            $("#table").eq(i).eq(4).css("background-color", "red");
-        }
-    }
-    alert(correct);
+    
 }
 
 document.addEventListener("DOMContentLoaded", function () {
