@@ -14,20 +14,18 @@ function check_test()
     var table = document.getElementById("table");
     for (i = 0; i < table.rows.length; i++)
     {
-        $("#table").eq(i)(function($) {
-            var client_answer = $(this).eq(4).val();
-            var answer = $(this).eq(5).text();
+        var client_answer = $("#table").eq(i).eq(4).val();
+        var answer = $("#table").eq(i).eq(5).text();
 
-            if (client_answer == answer)
-            {
-                $("#table").eq(i).eq(4).css("background-color", "green");
-                correct++;
-            }
-            else
-            {
-                $("#table").eq(i).eq(4).css("background-color", "red");
-            }
-        })(jQuery);
+        if (client_answer == answer)
+        {
+            $("#table").eq(i).eq(4).css("background-color", "green");
+            correct++;
+        }
+        else
+        {
+            $("#table").eq(i).eq(4).css("background-color", "red");
+        }
     }
     alert(correct);
 }
