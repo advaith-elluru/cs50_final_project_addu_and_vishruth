@@ -16,19 +16,14 @@ function check_test()
         alert(client_answer);
         var answer = $(this).find(".answer").text;
         alert(answer);
-        var $this = $(this);
 
         if (client_answer == answer)
         {
-            var color = $this.eq(4).css("background-color");
-            alert(color);
-            $this.eq(4)css("background-color: green");
+            $.eq(4)css("background-color: green");
             correct++;
         }
         else
         {
-            var color = $this.eq(4).css("background-color");
-            alert(color);
             $this.eq(4).css("background-color: red");
         }
     });
