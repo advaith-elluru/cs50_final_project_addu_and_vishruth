@@ -14,10 +14,8 @@ function check_test()
     $("#table tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
-        alert(client_answer);
-        alert(answer);
 
-        var $client_input = $(this).eq(4);
+        var $client_input = $(this).find("#client_answer");
 
         if (client_answer == answer)
         {
