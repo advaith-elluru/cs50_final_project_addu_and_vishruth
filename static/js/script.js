@@ -20,12 +20,12 @@ function check_test()
 
             if (client_answer == answer)
             {
-                $("this").eq(4).css("background-color", "green");
+                $("table").eq(i).eq(4).css("background-color", "green");
                 correct++;
             }
             else
             {
-                $(this).eq(4).css("background-color", "red");
+                $("table").eq(i).eq(4).css("background-color", "red");
             }
         });
     }
