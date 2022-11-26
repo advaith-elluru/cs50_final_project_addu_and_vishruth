@@ -14,7 +14,7 @@ function check_test()
     var table = document.getElementById("table");
     for (i = 0; i < table.rows.length; i++)
     {
-        $("#table").eq(i).(function() {
+        $("#table").eq(i).function() {
             var client_answer = $(this).eq(4).val();
             var answer = $(this).eq(5).text();
 
@@ -27,7 +27,7 @@ function check_test()
             {
                 $("#table").eq(i).eq(4).css("background-color", "red");
             }
-        });
+        };
     }
     alert(correct);
 }
