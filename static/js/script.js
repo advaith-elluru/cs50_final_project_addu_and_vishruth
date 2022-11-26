@@ -8,7 +8,7 @@ function choose()
     }
 }
 
-function check_test()
+function check_test(decision, pronums)
 {
     var correct = 0;
     $("#table tr").each(function() {
