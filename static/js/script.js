@@ -11,6 +11,8 @@ function choose()
 function check_test()
 {
     var correct = 0;
+    
+    for (i = 0; i <)
     $("#table tr").each(function() {
         var client_answer = $(this).find("#client_answer").val();
         alert(client_answer);
