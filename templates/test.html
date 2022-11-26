@@ -13,7 +13,7 @@
                 {% for number in range(numbers) %}
                     <tr>
                         <td>{{ range(min, (max + 1)) | random }}</td>
-                        <td>{{ decision }} </td>
+                        <td>{{ decision }}</td>
                         <td>{{ range(min, (max + 1)) | random }}</td>
                         <td>=</td>
                         <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
@@ -23,7 +23,7 @@
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" type="button" onclick="check_test({{ decision }}, {{ numbers }})">Submit</button>
+            <button class="btn btn-primary" type="button" onclick="check_test("{{ decision }}", {{ numbers }})">Submit</button>
         </div>
     </form>
 {% endblock %}
