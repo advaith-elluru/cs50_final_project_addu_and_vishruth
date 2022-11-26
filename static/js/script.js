@@ -13,25 +13,22 @@ function check_test()
     var correct = 0;
     var table = document.getElementById("table");
     for (i = 0; i < table.rows.length; i++)
-        $("#table tr").each(function() {
-            var client_answer = $(this).find("#client_answer").val();
-            var answer = $(this).find(".answer").text();
-            var $this = $(this).eq(4);
+    {
+        $("#table").eq(i)(function() {
+            var client_answer = $(this).eq(4).val();
+            var answer = $(this).eq(5).text();
 
             if (client_answer == answer)
             {
-                var color = $(this).eq(4).css("background-color");
-                alert(color);
-                $(this).eq(4).css("background-color", "green");
+                $("this").eq(4).css("background-color", "green");
                 correct++;
             }
             else
             {
-                var color = $(this).eq(4).css("background-color");
-                alert(color);
                 $(this).eq(4).css("background-color", "red");
             }
         });
+    }
     alert(correct);
 }
 
