@@ -10,11 +10,14 @@ function choose()
 
 function check_test()
 {
+    
     $("#table tr").each(function() {
         client_answer = $(this).eq(4).val();
         answer = $(this).eq(5).text();
 
-        $client_input =
+        $client_input = $(this).eq(4);
+
+        if (client_answer == answer)
     });
 }
 
