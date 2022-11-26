@@ -13,23 +13,21 @@ function check_test()
     var correct = 0;
     $("#table tr").each(function() {
         var client_answer = $(this).find("#client_answer").val();
-        alert(client_answer);
-        var answer = $(this).find(".answer").text;
-        alert(answer);
-        var $this = $(this);
+        var answer = $(this).find(".answer").text();
+        var $this = $(this).eq(4);
 
         if (client_answer == answer)
         {
-            var color = $this.eq(4).css("background-color");
+            var color = $(this).eq(4).css("background-color");
             alert(color);
-            $this.eq(4).css("background-color: green");
+            $(this).eq(4).css("background-color: green");
             correct++;
         }
         else
         {
-            var color = $this.eq(4).css("background-color");
+            var color = $(this).eq(4).css("background-color");
             alert(color);
-            $this.eq(4).css("background-color: red");
+            $(this).eq(4).css("background-color: red");
         }
     });
     alert(correct);
