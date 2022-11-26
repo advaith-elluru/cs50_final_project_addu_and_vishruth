@@ -14,6 +14,8 @@ function check_test()
     $("#table tr").each(function() {
         client_answer = $(this).eq(4).val();
         answer = $(this).eq(5).text();
+        alert(client_answer);
+        alert(answer);
 
         var $client_input = $(this).eq(4);
 
@@ -27,6 +29,7 @@ function check_test()
             $client_input.css("background-color", "red");
         }
     });
+    alert(correct);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
