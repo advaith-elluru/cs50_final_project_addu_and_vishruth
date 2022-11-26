@@ -14,15 +14,20 @@ function check_test()
     $("#table tr").each(function() {
         var client_answer = $(this).find("#client_answer").val();
         var answer = $(this).find(".answer").text();
+        var $this = $(this).eq(4);
 
         if (client_answer == answer)
         {
-            $(now).eq(4).css("background-color: green");
+            var color = $(this).eq(4).css("background-color");
+            alert(color);
+            $(this).eq(4).css("background-color", "green");
             correct++;
         }
         else
         {
-            $(now).eq(4).css("background-color: red");
+            var color = $(this).eq(4).css("background-color");
+            alert(color);
+            $(this).eq(4).css("background-color", "red");
         }
     });
     alert(correct);
