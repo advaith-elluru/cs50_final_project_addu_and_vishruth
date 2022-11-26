@@ -10,7 +10,12 @@ function choose()
 
 function check_test()
 {
-    
+    $("#table tr").each(function() {
+        client_answer = $(this).eq(4).val();
+        answer = $(this).eq(5).text();
+
+        $client_input =
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
