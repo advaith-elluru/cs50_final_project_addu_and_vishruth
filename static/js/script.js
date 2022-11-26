@@ -14,19 +14,14 @@ function check_test()
     $("#table tr").each(function() {
         var client_answer = $(this).find("#client_answer").val();
         var answer = $(this).find(".answer").text();
-        var now = $(this).eq(4);
 
         if (client_answer == answer)
         {
-            var color = $(this).eq(4).css("background-color");
-            alert(color);
             $(now).eq(4).css("background-color: green");
             correct++;
         }
         else
         {
-            var color = $(this).eq(4).css("background-color");
-            alert(color);
             $(now).eq(4).css("background-color: red");
         }
     });
