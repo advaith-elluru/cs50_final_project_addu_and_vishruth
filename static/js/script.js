@@ -42,7 +42,7 @@ function check_test(decision)
         var $client_input = $(this).find("#client_answer");
         var $answer = $(this).find("#answer")
 
-        if (int(client_answer) == int(answer))
+        if (parseInt(client_answer) == parseInt(answer))
         {
             $client_input.css("background-color", "green");
             correct++;
