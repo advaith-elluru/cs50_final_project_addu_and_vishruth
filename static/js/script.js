@@ -55,7 +55,7 @@ function check_test(decision)
         $answer.show();
     });
 
-    $("#table thead #answer_header").show;
+    $("#table thead tr #answer_header").css("display", "block");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
