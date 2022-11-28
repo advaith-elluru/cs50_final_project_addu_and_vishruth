@@ -14,7 +14,7 @@ function check_test(decision)
         var one = $(this).find("#one").text();
         var two = $(this).find("#two").text();
 
-        var $answer
+        var $answer = $(this).
     });
     var correct = 0;
     $("#table tr").each(function() {
