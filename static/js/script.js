@@ -16,7 +16,10 @@ function check_test(decision)
 
         var $answer = $(this).find("#answer")
 
-        if (decision)
+        if (decision === "+")
+        {
+            $answer.
+        }
     });
     var correct = 0;
     $("#table tr").each(function() {
