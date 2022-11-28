@@ -8,8 +8,14 @@ function choose()
     }
 }
 
-function check_test(decision, pronums)
+function check_test(decision)
 {
+    $("#table tr").each(function() {
+        var one = $(this).find("#one").text();
+        var two = $(this).find("#two").text();
+
+        
+    });
     var correct = 0;
     $("#table tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
