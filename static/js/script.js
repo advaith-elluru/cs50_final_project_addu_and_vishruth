@@ -18,19 +18,19 @@ function check_test(decision)
 
         if (decision === "+")
         {
-            $answer.text(int(one) + int(two));
+            $answer.text(parseInt(one) + parseInt(two));
         }
         else if (decision === "-")
         {
-            $answer.text(int(one) - int(two));
+            $answer.text(parseInt(one) - parseInt(two));
         }
         else if (decision === "x")
         {
-            $answer.text(int(one) * int(two));
+            $answer.text(parseInt(one) * parseInt(two));
         }
         else
         {
-            $answer.text(int(one) / int(two));
+            $answer.text(parseInt(one) / parseInt(two));
         }
     });
 
