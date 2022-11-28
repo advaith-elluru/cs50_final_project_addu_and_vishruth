@@ -10,17 +10,30 @@
     <form>
         <div class="mb-2">
             <table style="margin:auto" id="table">
-                {% for number in range(numbers) %}
+                <thead>
                     <tr>
-                        <td>{{ number + 1 }} ) &nbsp</td>
-                        <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                        <td>{{ decision }}</td>
-                        <td id="two">{{ range(min, (max + 1)) | random }}</td>
-                        <td>=</td>
-                        <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
-                        <td style="display:none" id="answer"></td>
+                        <td></td>
+                        <td></td>
+                        <td>Pro</td>
+                        <td>blem</td>
+                        <td></td>
+                        <td></td>
+                        <td style="display:none">Answer</td>
                     </tr>
-                {% endfor %}
+                </thead>
+                <tbody>
+                    {% for number in range(numbers) %}
+                        <tr>
+                            <td>{{ number + 1 }} ) &nbsp</td>
+                            <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                            <td>{{ decision }}</td>
+                            <td id="two">{{ range(min, (max + 1)) | random }}</td>
+                            <td>=</td>
+                            <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                            <td style="display:none" id="answer"></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
         <div class="mb-2">
