@@ -14,32 +14,33 @@ function check_test(decision)
         one = $(this).find("#one").text();
         two = $(this).find("#two").text();
 
-        var $answer = $(this).find("#answer")
+        var $answer = $(this).find("#answer");
 
         if (decision === "+")
         {
-            $answer.text(int(one) + int(two))
+            $answer.text(int(one) + int(two));
         }
         else if (decision === "-")
         {
-            $answer.text(int(one) - int(two))
+            $answer.text(int(one) - int(two));
         }
         else if (decision === "x")
         {
-            $answer.text(int(one) * int(two))
+            $answer.text(int(one) * int(two));
         }
         else
         {
-            $answer.text(int(one) / int(two))
+            $answer.text(int(one) / int(two));
         }
     });
-    
+
     var correct = 0;
     $("#table tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
 
         var $client_input = $(this).find("#client_answer");
+        var $answer = $(this).find("#answer")
 
         if (int(client_answer) == int(answer))
         {
@@ -50,6 +51,8 @@ function check_test(decision)
         {
             $client_input.css("background-color", "red");
         }
+
+        $answer.show();
     });
 }
 
