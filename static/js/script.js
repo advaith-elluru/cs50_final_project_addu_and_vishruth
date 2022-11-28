@@ -18,9 +18,22 @@ function check_test(decision)
 
         if (decision === "+")
         {
-            $answer.
+            $answer.text(int(one) + int(two))
+        }
+        else if (decision === "-")
+        {
+            $answer.text(int(one) - int(two))
+        }
+        else if (decision === "x")
+        {
+            $answer.text(int(one) * int(two))
+        }
+        else
+        {
+            $answer.text(int(one) / int(two))
         }
     });
+    
     var correct = 0;
     $("#table tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
@@ -28,7 +41,7 @@ function check_test(decision)
 
         var $client_input = $(this).find("#client_answer");
 
-        if (client_answer == answer)
+        if (int(client_answer) == int(answer))
         {
             $client_input.css("background-color", "green");
             correct++;
