@@ -11,12 +11,12 @@ function choose()
 function check_test(decision)
 {
     $("#table tr").each(function() {
-        var one = $(this).find("#one").text();
-        var two = $(this).find("#two").text();
+        one = $(this).find("#one").text();
+        two = $(this).find("#two").text();
 
         var $answer = $(this).find("#answer")
 
-        
+        if (decision)
     });
     var correct = 0;
     $("#table tr").each(function() {
