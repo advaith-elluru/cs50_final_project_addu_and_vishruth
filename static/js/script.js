@@ -61,7 +61,7 @@ function check_test(decision, pronums)
     $("#test_submit").hide();
 
     $("#number_correct").text(parseInt(correct));
-    $("#percent_correct").text(parseInt(correct)/parseInt(pronums))
+    $("#percent_correct").text(parseInt(correct) / parseInt(pronums))
 }
 
 document.addEventListener("DOMContentLoaded", function () {
