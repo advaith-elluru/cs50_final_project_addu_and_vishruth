@@ -10,20 +10,28 @@
     <form>
         <div class="mb-2">
             <table style="margin:auto" id="table">
-                {% for number in range(numbers) %}
+                <thead>
                     <tr>
-                        <td>{{ range(min, (max + 1)) | random }}</td>
-                        <td>{{ decision }}</td>
-                        <td>{{ range(min, (max + 1)) | random }}</td>
-                        <td>=</td>
-                        <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
-                        <td style="display:none" id="answer"></td>
+                        <th colspan="6" style="border-bottom: 3px solid black">Problem</th>
+                        <th colspan="1" id="answer_header" style="display:none; border-bottom: 3px solid black; border-left: 3px solid black"">Answer</th>
                     </tr>
-                {% endfor %}
+                </thead>
+                <tbody>
+                    {% for number in range(numbers) %}
+                        <tr>
+                            <td>{{ number + 1 }} ) &nbsp</td>
+                            <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                            <td>{{ decision }}</td>
+                            <td id="two">{{ range(min, (max + 1)) | random }}</td>
+                            <td>=</td>
+                            <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                            <td style="display:none; border-left: 3px solid black" id="answer"></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}')">Submit</button>
-        </div>
+            <button class="btn btn-primary" type="button" onclick="check_test('{{ decision }}')">Submit</button        </div>
     </form>
 {% endblock %}

@@ -8,16 +8,41 @@ function choose()
     }
 }
 
-function check_test(decision, pronums)
+function check_test(decision)
 {
-    var correct = 0;
     $("#table tr").each(function() {
+        one = $(this).find("#one").text();
+        two = $(this).find("#two").text();
+
+        var $answer = $(this).find("#answer");
+
+        if (decision === "+")
+        {
+            $answer.text(parseInt(one) + parseInt(two));
+        }
+        else if (decision === "-")
+        {
+            $answer.text(parseInt(one) - parseInt(two));
+        }
+        else if (decision === "x")
+        {
+            $answer.text(parseInt(one) * parseInt(two));
+        }
+        else
+        {
+            $answer.text(parseInt(one) / parseInt(two));
+        }
+    });
+
+    var correct = 0;
+    $("#table tbody tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
 
         var $client_input = $(this).find("#client_answer");
+        var $answer = $(this).find("#answer")
 
-        if (client_answer == answer)
+        if (parseInt(client_answer) == parseInt(answer))
         {
             $client_input.css("background-color", "green");
             correct++;
@@ -26,7 +51,11 @@ function check_test(decision, pronums)
         {
             $client_input.css("background-color", "red");
         }
+
+        $answer.show();
     });
+
+    $("#table thead tr #answer_header").css("display", "block");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
