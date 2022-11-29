@@ -8,7 +8,7 @@ function choose()
     }
 }
 
-function check_test(decision)
+function check_test(decision, pronums)
 {
     $("#table tr").each(function() {
         one = $(this).find("#one").text();
@@ -60,7 +60,8 @@ function check_test(decision)
     $("#table thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
-    $("#number_correct").text()
+    $("#number_correct").text(parseInt(correct));
+    $("#percent_correct").text(parseInt(correct)/parseInt(pronums))
 }
 
 document.addEventListener("DOMContentLoaded", function () {
