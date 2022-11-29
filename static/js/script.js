@@ -52,7 +52,7 @@ function check_test(decision)
             $client_input.css("background-color", "red");
         }
 
-        $client_input.disabled = true;
+        $client_input.attr("disabled", "disabled");
         $answer.show();
     });
 
