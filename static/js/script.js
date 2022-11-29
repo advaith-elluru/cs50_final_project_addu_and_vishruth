@@ -57,6 +57,7 @@ function check_test(decision)
     });
 
     $("#table thead tr #answer_header").css("display", "block");
+    $("#test_submit").hide();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
