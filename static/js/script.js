@@ -60,7 +60,7 @@ function check_test(decision)
     $("#table thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
-    $("#table_1 tbody tr number")
+    $("#number_correct").text()
 }
 
 document.addEventListener("DOMContentLoaded", function () {
