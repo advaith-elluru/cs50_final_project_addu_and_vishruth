@@ -49,7 +49,7 @@ function check_test(decision)
         }
         else
         {
-            $client_input.css("background-color", "red");
+            $client_input.css("background-color", "firebrick");
         }
 
         $answer.show();
