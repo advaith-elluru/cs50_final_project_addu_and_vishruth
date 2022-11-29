@@ -52,6 +52,7 @@ function check_test(decision)
             $client_input.css("background-color", "red");
         }
 
+        $client_input
         $answer.show();
     });
 
