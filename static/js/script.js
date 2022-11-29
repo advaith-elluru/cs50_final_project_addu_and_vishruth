@@ -35,6 +35,7 @@ function check_test(decision)
     });
 
     var correct = 0;
+
     $("#table tbody tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
@@ -58,6 +59,8 @@ function check_test(decision)
 
     $("#table thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
+
+    $("#table_1 tbody tr number")
 }
 
 document.addEventListener("DOMContentLoaded", function () {
