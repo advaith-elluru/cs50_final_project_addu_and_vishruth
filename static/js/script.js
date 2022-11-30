@@ -64,6 +64,7 @@ function check_test(decision, pronums, time)
     $("#percent_correct").text(parseInt(correct) / parseInt(pronums)) + "%";
     $("#time_taken").text((parseInt(time) / 1000) + " seconds")
 
+    $("#table").attr("float")
     $("#table_1").show();
 }
 
