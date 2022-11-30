@@ -8,7 +8,7 @@ function choose()
     }
 }
 
-function check_test(decision)
+function check_test(decision, pronums)
 {
     $("#table tr").each(function() {
         one = $(this).find("#one").text();
@@ -35,6 +35,7 @@ function check_test(decision)
     });
 
     var correct = 0;
+
     $("#table tbody tr").each(function() {
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
@@ -52,10 +53,15 @@ function check_test(decision)
             $client_input.css("background-color", "firebrick");
         }
 
+        $client_input.attr("disabled", "disabled");
         $answer.show();
     });
 
     $("#table thead tr #answer_header").css("display", "block");
+    $("#test_submit").hide();
+
+    $("#number_correct").text(parseInt(correct));
+    $("#percent_correct").text(parseInt(correct) / parseInt(pronums))
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -21,7 +21,7 @@
                         <tr>
                             <td>{{ number + 1 }} ) &nbsp</td>
                             <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                            <td>{{ decision }}</td>
+                            <td> {{ decision }} </td>
                             <td id="two">{{ range(min, (max + 1)) | random }}</td>
                             <td>=</td>
                             <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
@@ -30,8 +30,35 @@
                     {% endfor %}
                 </tbody>
             </table>
+
+            <table style="float:right; display:none" id="table_1">
+                <thead>
+                    <tr>
+                        <th colspan="2">Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number correct</td>
+                        <td id="number_correct"></td>
+                    </tr>
+                    <tr>
+                        <td>Percent correct</td>
+                        <td id="percent_correct"></td>
+                    </tr>
+                    <tr>
+                        <td>Time taken</td>
+                        <td id="time_taken"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="mb-2">
+<<<<<<< HEAD
             <button class="btn btn-primary" type="button" onclick="check_test('{{ decision }}')">Submit</button        </div>
+=======
+            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}')">Submit</button>
+        </div>
+>>>>>>> 1b5adb0f991cedd715f8e84c1e89ecca56364f74
     </form>
 {% endblock %}
