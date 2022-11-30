@@ -8,7 +8,7 @@ function choose()
     }
 }
 
-function check_test(decision, pronums)
+function check_test(decision, pronums, time)
 {
     $("#table tr").each(function() {
         one = $(this).find("#one").text();
@@ -60,8 +60,11 @@ function check_test(decision, pronums)
     $("#table thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
-    $("#number_correct").text(parseInt(correct));
-    $("#percent_correct").text(parseInt(correct) / parseInt(pronums))
+    $("#number_correct").text(parseInt(correct) "&nbsp problems correct");
+    $("#percent_correct").text(parseInt(correct) / parseInt(pronums)) "%";
+    $("#time_taken").text((parseInt(time) / 1000) "&nbsp seconds")
+
+    $("#table_i").show();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
