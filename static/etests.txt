@@ -7,8 +7,8 @@ TEXTS TO USE FOR EVERY TYPE OF CONFIG FOR ENGLISH TEST
         -
     b.mid
         test of 1 paragraph
-        -
-        -
+        - Harry Potter
+        - The Mysterious Benedict Society
         -
     c.hard
         test of 2 or more paragraphs
