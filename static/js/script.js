@@ -62,7 +62,7 @@ function check_test(decision, pronums, time)
 
     $("#number_correct").text("\xa0" + parseInt(correct) + " problems correct");
     $("#percent_correct").text(parseInt(correct) / parseInt(pronums)) + "%";
-    $("#time_taken").text((parseInt(time) / 1000) + " seconds")
+    $("#time_taken").text((parseFloat(time) / 1000) + " seconds")
 
     $("#table").css("display", "inline-block");
     $("#table_1").css("display", "inline");
