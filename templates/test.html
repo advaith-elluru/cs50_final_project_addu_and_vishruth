@@ -6,6 +6,7 @@
 
 {% block main %}
     <script>
+    $(document).ready(function() {
         var milliseconds = 0;
         myInterval = setInterval("milliseconds++", 1);
 
@@ -13,6 +14,7 @@
             clearInterval(myInterval);
             alert(milliseconds);
         });
+    });
     </script>
 
     <h1 class="display-1">Test</h1>
