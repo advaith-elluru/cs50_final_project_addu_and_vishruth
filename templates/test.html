@@ -8,7 +8,9 @@
     <script>
     $(document).ready(function() {
         var milliseconds = 0;
-        myInterval = setInterval("milliseconds++", 1);
+        myInterval = setInterval(function() {
+            milliseconds++
+        }, 1);
 
         $("#test_submit").click(function() {
             clearInterval(myInterval);
