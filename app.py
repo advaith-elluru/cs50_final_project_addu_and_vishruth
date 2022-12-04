@@ -175,7 +175,7 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get(user_id), y[])
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_i"), y[])
     return ""
 
 @app.route("/etest", methods=["GET", "POST"])
