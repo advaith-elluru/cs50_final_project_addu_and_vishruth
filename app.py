@@ -160,8 +160,8 @@ def test():
             return apology("Enter a minimum amount", 409)
         elif not max:
             return apology("Enter a maximum amount", 409)
-        elif not max >= min:
-            return apology("Minimum is greater than maximum", 410)
+        elif not (max > min):
+            return apology("Minimum is not less than maximum", 410)
 
         return render_template("test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
     else:
