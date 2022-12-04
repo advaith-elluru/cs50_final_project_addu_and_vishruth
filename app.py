@@ -175,8 +175,27 @@ def eng_test():
             # then render that template
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
-        if 
-        return apology("No " + type + " tests to take in category " + difficulty, 404)
+        if type == "corrector":
+            if difficulty == 'easy':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'hard':
+                apology("No " + type + " tests to take in category " + difficulty, 404)
+        elif type == "reading":
+            if difficulty == 'easy':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'hard':
+                apology("No " + type + " tests to take in category " + difficulty, 404)
+        if type == "writing":
+            if difficulty == 'easy':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty =='hard':
+                apology("No " + type + " tests to take in category " + difficulty, 404)
     else:
         return render_template("english.html")
 
