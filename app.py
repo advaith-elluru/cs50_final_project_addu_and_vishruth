@@ -168,6 +168,9 @@ def test():
         return render_template("decide.html")
 
 @app.route("/results", methods=["GET", "POST"])
+@login_required
+def results():
+    return
 
 @app.route("/etest", methods=["GET", "POST"])
 @login_required
