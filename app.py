@@ -174,6 +174,8 @@ def test():
 def results():
     x = request.form.get("json")
     y = json.loads(x)
+
+    db
     print(y)
     return ""
 
