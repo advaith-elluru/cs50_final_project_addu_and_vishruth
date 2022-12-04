@@ -172,7 +172,7 @@ def test():
 @app.route("/results", methods=["GET", "POST"])
 @login_required
 def results():
-    x = request.POST.get("json")
+    x = request.form.get("json")
     y = json.loads(x)
     print(y)
 
