@@ -6,6 +6,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import timedelta
 from helpers import apology, check_credit, login_required
 
+import json
+
 # COnfigure application
 app = Flask(__name__)
 
@@ -170,7 +172,7 @@ def test():
 @app.route("/results", methods=["GET", "POST"])
 @login_required
 def results():
-    return
+    y = json.loads(x)
 
 @app.route("/etest", methods=["GET", "POST"])
 @login_required
