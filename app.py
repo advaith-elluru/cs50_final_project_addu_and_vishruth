@@ -172,6 +172,7 @@ def test():
 @app.route("/results", methods=["GET", "POST"])
 @login_required
 def results():
+    x = request.POST
     y = json.loads(x)
 
 @app.route("/etest", methods=["GET", "POST"])
