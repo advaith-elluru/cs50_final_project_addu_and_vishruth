@@ -66,7 +66,6 @@ function check_test(decision, pronums, time, avgTime)
     $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime) + "\xa0 seconds per problem")
 
     $("#table").css("display", "inline-block");
-    $("#table").append("   ")
     $("#table_1").css("display", "inline-block");
     $("#table_1").show();
 }
