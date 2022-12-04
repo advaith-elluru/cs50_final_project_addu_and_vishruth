@@ -11,7 +11,7 @@
 
         $("#test_submit").click(function() {
             endTime = Date.now();
-            seconds = (endTime - startTime);
+            milliseconds = (endTime - startTime);
 
             avgTime = seconds / {{ numbers }};
         });
@@ -72,7 +72,7 @@
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
+            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', milliseconds, avgTime)">Submit</button>
         </div>
     </form>
 {% endblock %}
