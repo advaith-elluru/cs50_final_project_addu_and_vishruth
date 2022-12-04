@@ -167,6 +167,8 @@ def test():
     else:
         return render_template("decide.html")
 
+@app.route("/results", methods=["GET", "POST"])
+
 @app.route("/etest", methods=["GET", "POST"])
 @login_required
 def eng_test():

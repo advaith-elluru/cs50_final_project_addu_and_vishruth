@@ -68,6 +68,8 @@ function check_test(decision, pronums, time, avgTime)
     $("#table").css("display", "inline-block");
     $("#table_1").css("display", "inline-block");
     $("#table_1").show();
+
+    $.post
 }
 
 document.addEventListener("DOMContentLoaded", function () {
