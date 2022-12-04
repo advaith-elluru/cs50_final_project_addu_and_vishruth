@@ -3,7 +3,7 @@ from flask import Flask, redirect, request, render_template, session
 from flask_session import Session
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
-from datetime import timedelta
+import datetime
 from helpers import apology, check_credit, login_required
 
 import json
@@ -26,7 +26,7 @@ db = SQL("sqlite:///math.db")
 @app.before_request
 def before_request():
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=120)
+    app.permanent_session_lifetime = datetime.timedelta(minutes=120)
 
 def login_required(f):
     @wraps(f)
@@ -175,8 +175,7 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_i"), y["number_correct"], y["number_of_questions"], y["time"], , y["percent_correct"], y["avg_time"])
-
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_i"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
     return ""
 
 @app.route("/etest", methods=["GET", "POST"])
