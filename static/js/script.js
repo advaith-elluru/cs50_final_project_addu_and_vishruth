@@ -70,7 +70,10 @@ function check_test(decision, pronums, time, avgTime)
     $("#table_1").show();
 
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4)};
-    $.ajax({type: "POST", url: "/results", data: json.stringify(x), success: function() {
+    var data = {
+        json: json.stringify(x)
+    }
+    $.ajax({type: "POST", url: "/results", data: data, success: function() {
         alert("YAY");
     }});
 }
