@@ -175,7 +175,7 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
     print(y)
-    pass
+    return ""
 
 @app.route("/etest", methods=["GET", "POST"])
 @login_required
