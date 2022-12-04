@@ -63,7 +63,7 @@ function check_test(decision, pronums, time, avgTime)
     $("#number_correct").text("\xa0" + parseInt(correct) + " problems correct");
     $("#percent_correct").text((parseInt(correct) / parseInt(pronums)).toFixed(6) * 100 + "%");
     $("#time_taken").text(parseFloat(time) + " seconds")
-    $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime) + "\xa0 seconds per problem")
+    $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime).toFixed(4) + "\xa0 seconds per problem")
 
     $("#table").css("display", "inline-block");
     $("#table_1").css("display", "inline-block");
