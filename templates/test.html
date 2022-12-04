@@ -7,11 +7,11 @@
 {% block main %}
     <script>
     $(document).ready(function() {
-        startTime = 
+        startTime = Date.now();
 
         $("#test_submit").click(function() {
-            clearInterval(myInterval);
-            alert(milliseconds);
+            endTime = Date.now();
+            seconds = (endTime - startTime) / 1000;
         });
     });
     </script>
@@ -66,7 +66,7 @@
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', 'milliseconds')">Submit</button>
+            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', seconds)">Submit</button>
         </div>
     </form>
 {% endblock %}
