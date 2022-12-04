@@ -69,7 +69,8 @@ function check_test(decision, pronums, time, avgTime)
     $("#table_1").css("display", "inline-block");
     $("#table_1").show();
 
-    $.post
+    x = {}
+    $.post("/results", json.stringify(x));
 }
 
 document.addEventListener("DOMContentLoaded", function () {
