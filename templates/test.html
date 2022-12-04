@@ -5,6 +5,19 @@
 {% endblock %}
 
 {% block main %}
+    <script>
+    $(document).ready(function() {
+        startTime = Date.now();
+
+        $("#test_submit").click(function() {
+            endTime = Date.now();
+            seconds = (endTime - startTime) / 1000;
+
+            avgTime = seconds / {{ numbers }};
+        });
+    });
+    </script>
+
     <h1 class="display-1">Test</h1>
     <br>
     <form>
@@ -30,32 +43,39 @@
                     {% endfor %}
                 </tbody>
             </table>
-
-            <table style="float:right; display:none" id="table_1">
+            <table style="display:none" id="table_1">
                 <thead>
                     <tr>
-                        <th colspan="2">Results</th>
+                        <th style="border-bottom: 3px solid black" colspan="2">Results</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Number correct</td>
+                        <td style="border-right: 3px solid black">Number correct  &nbsp</td>
                         <td id="number_correct"></td>
                     </tr>
                     <tr>
-                        <td>Percent correct</td>
+                        <td style="border-right: 3px solid black">Percent correct  &nbsp</td>
                         <td id="percent_correct"></td>
                     </tr>
                     <tr>
-                        <td>Time taken</td>
+                        <td style="border-right: 3px solid black">Time taken &nbsp</td>
                         <td id="time_taken"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-right: 3px solid black">Average time taken &nbsp</td>
+                        <td id="avg_time_taken"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="mb-2">
+<<<<<<< HEAD
             <button class="btn btn-primary" type="button" onclick="check_test('{{ decision }}')">Submit</button>        </div>
             <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}')">Submit</button>
+=======
+            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
+>>>>>>> 643a422bcf003b01a7796327f3d51d22c5fc1962
         </div>
     </form>
 {% endblock %}
