@@ -50,7 +50,7 @@ function check_test(decision, pronums, time, avgTime)
         }
         else
         {
-            $client_input.css("background-color", "firebrick");
+            $client_input.css("background-color", "red");
         }
 
         $client_input.attr("disabled", "disabled");
