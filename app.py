@@ -190,7 +190,8 @@ def eng_test():
         type = request.form.get("type")
         if type == "corrector":
             if difficulty == 'easy':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
+                list_1 = ["etest1.html","etest2.html","etest3.html"]
+                return render_template(list_1[0])
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'hard':
