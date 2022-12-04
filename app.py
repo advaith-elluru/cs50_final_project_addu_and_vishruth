@@ -173,9 +173,9 @@ def eng_test():
             # remember to find books and texts which you can copy,
             # and create multiple html pages for the test. randomly choose from a list of templates for each config,
             # then render that template
-            
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
+        if 
         return apology("No " + type + " tests to take in category " + difficulty, 404)
     else:
         return render_template("english.html")
