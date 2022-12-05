@@ -74,9 +74,7 @@ function check_test(decision, pronums, time, avgTime)
     var data = {
         "json": JSON.stringify(x)
     }
-    $.ajax({type: "POST", url: "/results", data: data, success: function() {
-        alert("YAY");
-    }});
+    $.ajax({type: "POST", url: "/results", data: data,});
 }
 
 document.addEventListener("DOMContentLoaded", function () {
