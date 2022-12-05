@@ -13,6 +13,7 @@
             <th>Questions Correct</th>
             <th>Percentage Correct</th>
             <th>Time Taken</th>
+            <th>Average Time Per Problem</th>
             <th>When Test Was Taken</th>
         </tr>
         {% for row in rows %}
@@ -21,6 +22,7 @@
                 <td>{{ row["questions_correct"] }}</td>
                 <td>{{ row["percent_correct"] }}</td>
                 <td>{{ row["time_taken"] }}</td>
+                <td>{{ row["avg_time_taken"] }}</td>
                 <td>{{ row["datetime"] }}</td>
             </tr>
         {% endfor %}
