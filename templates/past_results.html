@@ -8,21 +8,21 @@
     <h1 class="display-1">Past Results</h1>
     <br>
     <table style="margin: auto">
-        <tr>
-            <th>Number of Questions</th>
-            <th>Questions Correct</th>
-            <th>Percentage Correct</th>
-            <th>Time Taken</th>
-            <th>Average Time Per Problem</th>
-            <th>When Test Was Taken</th>
+        <tr style="border-bottom: 3px solid black">
+            <th style="border-right: 3px solid black">Number of Questions &nbsp</th>
+            <th style="border-right: 3px solid black">&nbsp Questions Correct &nbsp</th>
+            <th style="border-right: 3px solid black">&nbsp Percentage Correct &nbsp</th>
+            <th style="border-right: 3px solid black">&nbsp Time Taken &nbsp</th>
+            <th style="border-right: 3px solid black">&nbsp Average Time Per Problem &nbsp</th>
+            <th>&nbsp When Test Was Taken</th>
         </tr>
         {% for row in rows %}
             <tr>
-                <td>{{ row["number_of_questions"] }}</td>
-                <td>{{ row["questions_correct"] }}</td>
-                <td>{{ row["percent_correct"] }}</td>
-                <td>{{ row["time_taken"] }}</td>
-                <td>{{ row["avg_time_taken"] }}</td>
+                <td style="border-right: 3px solid black">{{ row["number_of_questions"] }} questions</td>
+                <td style="border-right: 3px solid black">{{ row["questions_correct"] }} questions correct</td>
+                <td style="border-right: 3px solid black">{{ row["percent_correct"] }}%</td>
+                <td style="border-right: 3px solid black">{{ row["time_taken"] }} seconds</td>
+                <td style="border-right: 3px solid black">{{ row["avg_time_taken"] }} seconds per problem</td>
                 <td>{{ row["datetime"] }}</td>
             </tr>
         {% endfor %}
