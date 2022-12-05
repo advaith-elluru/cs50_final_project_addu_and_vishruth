@@ -68,7 +68,7 @@ function check_test(decision, pronums, time, avgTime)
     $("#table").css("display", "inline-block");
     $("#table_1").css("display", "inline-block");
     $("#table_1").show();
-    $("#test_header").text("Results")
+    $("#test_header").html("<h1 class='display-1'>Results</h1>");
 
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4)};
     var data = {
