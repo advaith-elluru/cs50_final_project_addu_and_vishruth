@@ -22,9 +22,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///math.db")
 
-# User ID session
-userID_session = session.get("user_id")
-
 @app.before_request
 def before_request():
     session.permanent = True
@@ -33,7 +30,7 @@ def before_request():
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if userID_session is None:
+        if session.get("user_id") is None:
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
@@ -59,7 +56,6 @@ def index():
 def login():
 
     session.clear()
-    userID_session = None
 
     if request.method == "POST":
         username = request.form.get("username")
@@ -76,7 +72,6 @@ def login():
             return apology("Invalid username and/or password", 403)
 
         session["user_id"] = rows[0]["id"]
-        userID_session = session.get("user_id")
 
         return redirect("/")
 
@@ -87,7 +82,6 @@ def login():
 def register():
 
     session.clear()
-    userID_session = None
 
     if request.method == "POST":
         username = request.form.get("username")
@@ -110,7 +104,6 @@ def register():
 
         lines = db.execute("SELECT * FROM users WHERE username = ?", username)
         session["user_id"] = lines[0]["id"]
-        userID_session = session.get("user_id")
 
         return redirect("/")
     else:
@@ -124,7 +117,7 @@ def change_password():
         old_password = request.form.get("old_password")
         new_password = request.form.get("new_password")
         confirmation = request.form.get("confirmation")
-        rows = db.execute("SELECT * FROM users WHERE id = ?", userID_session)
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session.get("user_id"))
 
         if not old_password:
             return apology("Please type your old password", 403)
@@ -137,7 +130,7 @@ def change_password():
         elif new_password != confirmation:
             return apology("Please retype the same password as you typed in the previous field")
 
-        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), userID_session)
+        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), session.get("user_id"))
 
         return redirect("/")
 
@@ -147,7 +140,7 @@ def change_password():
 @app.route("/logout")
 def logout():
     session.clear()
-    userID_session = None
+
     return redirect("/")
 
 @app.route("/test", methods=["GET", "POST"])
@@ -182,7 +175,7 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", userID_session, y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
     return ""
 
 @app.route("/etest", methods=["GET", "POST"])
@@ -250,23 +243,23 @@ def past_results():
         hi = request.form.get("hi")
 
         if choice == "all_results":
-            rows = db.execute("SELECT * FROM results WHERE user_id = ?", userID_session)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
         elif choice == "best_percentage":
             if not amount:
                 return apology("Please enter amount", 407)
             elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", userID_session, hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), hi)
         else:
             if not amount:
                 return apology("Please enter amount", 407)
-            elif int(amount) > hi:
+            elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time LIMIT ?", userID_session, hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time_taken LIMIT ?", session.get("user_id"), hi)
 
         return render_template("past_results.html", rows = rows)
     else:
-        rows = db.execute("SELECT * FROM results WHERE user_id = ?", userID_session)
+        rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
         if len(rows) < 1:
             return apology("You didn't take any tests", 404)
         hi = len(rows)
@@ -285,7 +278,7 @@ def credit_check():
             if check_credit(credit_num) == False:
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, userID_session)
+                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session.get("user_id"))
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
