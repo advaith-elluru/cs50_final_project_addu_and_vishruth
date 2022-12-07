@@ -22,6 +22,8 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///math.db")
 
+# User ID session
+userID_session = session.get("user_id")
 
 @app.before_request
 def before_request():
