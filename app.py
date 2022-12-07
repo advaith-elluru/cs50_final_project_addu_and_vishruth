@@ -33,7 +33,7 @@ def before_request():
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session.get("user_id") is None:
+        if userID_session is None:
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
@@ -120,7 +120,7 @@ def change_password():
         old_password = request.form.get("old_password")
         new_password = request.form.get("new_password")
         confirmation = request.form.get("confirmation")
-        rows = db.execute("SELECT * FROM users WHERE id = ?", session.get("user_id"))
+        rows = db.execute("SELECT * FROM users WHERE id = ?", userID_session)
 
         if not old_password:
             return apology("Please type your old password", 403)
@@ -133,7 +133,7 @@ def change_password():
         elif new_password != confirmation:
             return apology("Please retype the same password as you typed in the previous field")
 
-        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), session.get("user_id"))
+        db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), userID_session)
 
         return redirect("/")
 
@@ -177,7 +177,7 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", userID_session, y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
     return ""
 
 @app.route("/etest", methods=["GET", "POST"])
@@ -245,23 +245,23 @@ def past_results():
         amount = request.form.get("amount")
 
         if choice == "all_results":
-            rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
+            rows = db.execute("SELECT * FROM results WHERE user_id = ?", userID_session)
         elif choice == "best_percentage":
             if not amount:
                 return apology("Please enter amount", 407)
             elif int(amount) > hi:
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", userID_session, hi)
         else:
             if not amount:
                 return apology("Please enter amount", 407)
             elif int(amount) > hi:
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time LIMIT ?", session.get("user_id"), hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time LIMIT ?", userID_session, hi)
 
         return render_template("past_results.html", rows = rows)
     else:
-        rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
+        rows = db.execute("SELECT * FROM results WHERE user_id = ?", userID_session)
         if len(rows) < 1:
             return apology("You didn't take any tests", 404)
         hi = len(rows)
