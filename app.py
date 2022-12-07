@@ -59,6 +59,7 @@ def index():
 def login():
 
     session.clear()
+    userID_session = None
 
     if request.method == "POST":
         username = request.form.get("username")
@@ -75,6 +76,7 @@ def login():
             return apology("Invalid username and/or password", 403)
 
         session["user_id"] = rows[0]["id"]
+        userID_session = session.get("user_id")
 
         return redirect("/")
 
@@ -85,6 +87,7 @@ def login():
 def register():
 
     session.clear()
+    userID_session = None
 
     if request.method == "POST":
         username = request.form.get("username")
@@ -107,6 +110,7 @@ def register():
 
         lines = db.execute("SELECT * FROM users WHERE username = ?", username)
         session["user_id"] = lines[0]["id"]
+        userID_session = session.get("user_id")
 
         return redirect("/")
     else:
@@ -143,6 +147,7 @@ def change_password():
 @app.route("/logout")
 def logout():
     session.clear()
+    userID_session = None
     return redirect("/")
 
 @app.route("/test", methods=["GET", "POST"])
@@ -280,7 +285,7 @@ def credit_check():
             if check_credit(credit_num) == False:
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session["user_id"])
+                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, userID_session)
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")
