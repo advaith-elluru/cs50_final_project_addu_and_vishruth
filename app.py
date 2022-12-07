@@ -247,13 +247,13 @@ def past_results():
         elif choice == "best_percentage":
             if not amount:
                 return apology("Please enter amount", 407)
-            elif amount > hi:
+            elif int(amount) > hi:
                 return apology("You haven't taken that many tests yet", 407)
             rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), hi)
         else:
             if not amount:
                 return apology("Please enter amount", 407)
-            elif amount > hi:
+            elif int(amount) > hi:
                 return apology("You haven't taken that many tests yet", 407)
             rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time LIMIT ?", session.get("user_id"), hi)
 
