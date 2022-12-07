@@ -247,7 +247,7 @@ def past_results():
             return apology("Invalid choice", 405)
 
         amount = request.form.get("amount")
-        hi = 
+        hi = request.form.get("hi")
 
         if choice == "all_results":
             rows = db.execute("SELECT * FROM results WHERE user_id = ?", userID_session)
