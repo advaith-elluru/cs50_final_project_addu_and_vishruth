@@ -5,6 +5,7 @@ from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 import datetime
 from helpers import apology, check_credit, login_required
+import random
 
 import json
 
