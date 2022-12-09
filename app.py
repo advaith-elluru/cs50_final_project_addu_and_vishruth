@@ -176,17 +176,14 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)", session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct,avg_time_taken) VALUES(?, ?, ?, ?, ?, ?, ?)",
+                session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"])
     return ""
 
 @app.route("/etest", methods=["GET", "POST"])
 @login_required
 def eng_test():
     if request.method == "POST":
-        # NOTE_TO SELF ->
-            # remember to find books and texts which you can copy,
-            # and create multiple html pages for the test. randomly choose from a list of templates for each config,
-            # then render that template
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
         if type == "corrector":
