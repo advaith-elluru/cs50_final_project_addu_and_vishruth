@@ -186,7 +186,7 @@ def eng_test():
     if request.method == "POST":
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
-        # checks for errors in selection
+    # checks for errors in selection
         if not difficulty:
             return apology("Select a difficulty", 407)
         elif difficulty not in ["easy", "mid", "hard"]:
@@ -195,7 +195,7 @@ def eng_test():
             return apology("Select a type of test", 407)
         elif type not in ["reading", "corrector", "writing"]:
             return apology("Please choose a valid option", 407)
-        # we start to figure out what config the user wants and render a suitable test
+    # we start to figure out what config the user wants and render a suitable test
         else:
             if type == "corrector":
                 if difficulty == 'easy':
