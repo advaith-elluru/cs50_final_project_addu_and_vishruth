@@ -186,6 +186,15 @@ def eng_test():
     if request.method == "POST":
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
+        if not difficulty:
+            return apology("Select a difficulty", 407)
+        elif difficulty not in ["easy", "mid", "hard"]:
+            return apology("Please choose a valid option", 407)
+        elif not type:
+            return apology("Select a type of test", 407)
+        elif type not in ["reading", "corrector", "writing"]:
+            return apology("Please choose a valid option", 407)
+        
         if type == "corrector":
             if difficulty == 'easy':
                 list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
