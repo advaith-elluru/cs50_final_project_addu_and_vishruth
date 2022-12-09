@@ -191,7 +191,9 @@ def eng_test():
         if type == "corrector":
             if difficulty == 'easy':
                 list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
-                return render_template(list_1[0])
+                choice = random.randint(0,2)
+                alert("Test"+ choice)
+                return render_template(list_1[choice])
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'hard':
