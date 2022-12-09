@@ -186,6 +186,7 @@ def eng_test():
     if request.method == "POST":
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
+        # checks for errors in selection
         if not difficulty:
             return apology("Select a difficulty", 407)
         elif difficulty not in ["easy", "mid", "hard"]:
@@ -194,46 +195,47 @@ def eng_test():
             return apology("Select a type of test", 407)
         elif type not in ["reading", "corrector", "writing"]:
             return apology("Please choose a valid option", 407)
-        
-        if type == "corrector":
-            if difficulty == 'easy':
-                list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty == 'mid':
-                list_1 = ["/etests/etest4.html","/etests/etest5.html","/etests/etest6.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty == 'hard':
-                list_1 = ["/etests/etest7.html","/etests/etest8.html","/etests/etest9.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-        elif type == "reading":
-            if difficulty == 'easy':
-                list_1 = ["/etests/etest10.html","/etests/etest11.html","/etests/etest12.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty == 'mid':
-                list_1 = ["/etests/etest13.html","/etests/etest14.html","/etests/etest15.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty == 'hard':
-                list_1 = ["/etests/etest16.html","/etests/etest17.html","/etests/etest18.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-        if type == "writing":
-            if difficulty == 'easy':
-                list_1 = ["/etests/etest19.html","/etests/etest20.html","/etests/etest21.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty == 'mid':
-                list_1 = ["/etests/etest22.html","/etests/etest23.html","/etests/etest24.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
-            elif difficulty =='hard':
-                list_1 = ["/etests/etest25.html","/etests/etest26.html","/etests/etest27.html"]
-                choice = random.randint(0,2)
-                return render_template(list_1[choice])
+        # we start to figure out what config the user wants and render a suitable test
+        else:
+            if type == "corrector":
+                if difficulty == 'easy':
+                    list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty == 'mid':
+                    list_1 = ["/etests/etest4.html","/etests/etest5.html","/etests/etest6.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty == 'hard':
+                    list_1 = ["/etests/etest7.html","/etests/etest8.html","/etests/etest9.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+            elif type == "reading":
+                if difficulty == 'easy':
+                    list_1 = ["/etests/etest10.html","/etests/etest11.html","/etests/etest12.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty == 'mid':
+                    list_1 = ["/etests/etest13.html","/etests/etest14.html","/etests/etest15.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty == 'hard':
+                    list_1 = ["/etests/etest16.html","/etests/etest17.html","/etests/etest18.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+            if type == "writing":
+                if difficulty == 'easy':
+                    list_1 = ["/etests/etest19.html","/etests/etest20.html","/etests/etest21.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty == 'mid':
+                    list_1 = ["/etests/etest22.html","/etests/etest23.html","/etests/etest24.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
+                elif difficulty =='hard':
+                    list_1 = ["/etests/etest25.html","/etests/etest26.html","/etests/etest27.html"]
+                    choice = random.randint(0,2)
+                    return render_template(list_1[choice])
     else:
         return render_template("english.html")
 
