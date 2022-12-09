@@ -22,7 +22,6 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///math.db")
 
-
 @app.before_request
 def before_request():
     session.permanent = True
@@ -141,6 +140,7 @@ def change_password():
 @app.route("/logout")
 def logout():
     session.clear()
+
     return redirect("/")
 
 @app.route("/test", methods=["GET", "POST"])
@@ -190,7 +190,7 @@ def eng_test():
         type = request.form.get("type")
         if type == "corrector":
             if difficulty == 'easy':
-                list_1 = ["etests/etest1.html","etests/etest2.html","etests/etest3.html"]
+                list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
                 return render_template(list_1[0])
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
@@ -232,7 +232,6 @@ def ws_test():
 @app.route("/past_results", methods=["GET", "POST"])
 @login_required
 def past_results():
-    hi = 0
     if request.method == "POST":
         choice = request.form.get("choice")
         if not choice:
@@ -241,21 +240,22 @@ def past_results():
             return apology("Invalid choice", 405)
 
         amount = request.form.get("amount")
+        hi = request.form.get("hi")
 
         if choice == "all_results":
             rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
         elif choice == "best_percentage":
             if not amount:
                 return apology("Please enter amount", 407)
-            elif amount > hi:
+            elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
             rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), hi)
         else:
             if not amount:
                 return apology("Please enter amount", 407)
-            elif amount > hi:
+            elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time LIMIT ?", session.get("user_id"), hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time_taken LIMIT ?", session.get("user_id"), hi)
 
         return render_template("past_results.html", rows = rows)
     else:
@@ -263,7 +263,7 @@ def past_results():
         if len(rows) < 1:
             return apology("You didn't take any tests", 404)
         hi = len(rows)
-        return render_template("choose.html", rows = len(rows))
+        return render_template("choose.html", rows = len(rows), hi = hi)
 
 
 @app.route("/credit", methods=["GET", "POST"])
@@ -278,7 +278,7 @@ def credit_check():
             if check_credit(credit_num) == False:
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
-                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session["user_id"])
+                db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session.get("user_id"))
                 return render_template("accepted_credit.html")
     else:
         return render_template("credit.html")

@@ -68,14 +68,13 @@ function check_test(decision, pronums, time, avgTime)
     $("#table").css("display", "inline-block");
     $("#table_1").css("display", "inline-block");
     $("#table_1").show();
+    $("#test-header").text("Results");
 
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4)};
     var data = {
         "json": JSON.stringify(x)
     }
-    $.ajax({type: "POST", url: "/results", data: data, success: function() {
-        alert("YAY");
-    }});
+    $.ajax({type: "POST", url: "/results", data: data,});
 }
 
 document.addEventListener("DOMContentLoaded", function () {
