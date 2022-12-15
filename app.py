@@ -201,7 +201,7 @@ def eng_test():
                 if difficulty == 'easy':
                     list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
                     choice = random.randint(0,2)
-                    return render_template(list_1[0])
+                    return render_template(list_1[choice])
                 elif difficulty == 'mid':
                     list_1 = ["/etests/etest4.html","/etests/etest5.html","/etests/etest6.html"]
                     choice = random.randint(0,2)
