@@ -11,7 +11,7 @@
         }
     </style>
     <h1 class="display-2" style="text-align:left; margin-left:200px;">Test</h1>
-    <form action="/next">
+    <form action="/next" method="POST">
         <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
             <p>Find the error in the sentences. Click on the word that needs to be fixed.</p>
             <!-- Jim ran to the grocery store. They had run out of vegetables! Jim returned home after an hour.
@@ -29,7 +29,7 @@
             <input type="radio" value="There is no mistake." id="four"><label for="four">Forgot to use quotations.</label><br>
         </div>
         <div class="mb-2" style="text-align:left; margin-left:250px">
-            <button class="btn btn-primary" type="button">Submit</button>
+            <button type="submit">Submit</button>
         </div>
     </form>
 {% endblock %}
