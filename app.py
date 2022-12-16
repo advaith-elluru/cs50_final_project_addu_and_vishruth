@@ -239,6 +239,11 @@ def eng_test():
     else:
         return render_template("english.html")
 
+@app.route("/next", methods=["POST"])
+@login_required
+def next():
+    return render_template("/etests/etest2.html")
+
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
 def sci_test():
