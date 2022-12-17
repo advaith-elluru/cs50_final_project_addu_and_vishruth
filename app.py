@@ -244,8 +244,7 @@ def eng_test():
 @login_required
 def next():
     answers = request.form.get("radanswer")
-    
-    return render_template("/etests/etest2.html")
+    return apology(answers, 400)
 
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
