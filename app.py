@@ -246,7 +246,7 @@ def next():
     answers = request.form.get("ans")
     answer = request.form.get("ans2")
     ans = request.form.get("ans3")
-    return apology(ans, 400)
+    return apology(answers+answer+ans, 400)
 
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
