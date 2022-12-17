@@ -239,7 +239,7 @@ def eng_test():
     else:
         return render_template("english.html")
 
-# to do something with the english test haven't figured it all out just yet.
+# to do something with the english test. Have an idea...still getting it to work
 @app.route("/enext", methods=["POST"])
 @login_required
 def next():
