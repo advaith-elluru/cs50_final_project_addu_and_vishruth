@@ -243,7 +243,7 @@ def eng_test():
 @app.route("/enext", methods=["POST"])
 @login_required
 def next():
-    answers = request.form.get("radanswer")
+    answers = request.form.get("ans")
     return apology(answers, 400)
 
 @app.route("/stest", methods=["GET", "POST"])
