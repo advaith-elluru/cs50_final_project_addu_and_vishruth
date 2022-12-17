@@ -11,22 +11,33 @@
         }
     </style>
     <h1 class="display-2" style="text-align:left; margin-left:200px;">Test</h1>
-    <form action="/next" method="POST">
+    <form action="/enext" method="POST">
         <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
             <p>Find the error in the sentences. Click on the word that needs to be fixed.</p>
-            <!-- Jim ran to the grocery store. They had run out of vegetables! Jim returned home after an hour.
-                He said the checkout lines were too long -->
             <br><br>
-            <p>Jim ran to the grocery store. They had run out of vegetables! </p>
+            <p>1. Jim ran to the grocery store. They had run out of vegetables! </p>
             <p>Jim returned home after an hour. He said that the checkout lines were too long.</p>
         </div>
         <br>
         <!-- Answer Options for questions-->
         <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
-            <input type="radio" value="There is no mistake." id="one" name="radAnswer"><label for="one">There is no mistake.</label><br>
-            <input type="radio" value="There is no mistake." id="two" name="radAnswer"><label for="two">"Vegetables" is spelled incorrectly</label><br>
-            <input type="radio" value="There is no mistake." id="three" name="radAnswer"><label for="three">There is a punctuation error.</label><br>
-            <input type="radio" value="There is no mistake." id="four" name="radAnswer"><label for="four">Forgot to use quotations.</label><br>
+            <input type="radio" value="There is no mistake." id="one" name="radAnswer">There is No Mistake</input><br>
+            <input type="radio" value="spelling" id="two" name="radAnswer">"Vegetables" is spelled incorrectly</input><br>
+            <input type="radio" value="punctuation" id="three" name="radAnswer">There is a punctuation error.</input><br>
+            <input type="radio" value="quotes" id="four" name="radAnswer">Forgot to use quotations.</input><br>
+        </div>
+        <br>
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <p>2. Life was good for Mark, but it couldve been better.</p>
+            <p>He had ran out of video games to play.</p>
+        </div>
+        <br>
+        <!-- Answer Options for questions-->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <input type="radio" value="There is no mistake." id="one" name="radAnswer">There is No Mistake</input><br>
+            <input type="radio" value="spelling" id="two" name="radAnswer">"Better" is spelled incorrectly</input><br>
+            <input type="radio" value="puncutation" id="three" name="radAnswer">Comma is used incorrectly</input><br>
+            <input type="radio" value="apostrophe" id="four" name="radAnswer">"Could've" instead of "couldve"</input><br>
         </div>
         <div class="mb-2" style="text-align:left; margin-left:250px">
             <button type="submit">Submit</button>

@@ -240,9 +240,11 @@ def eng_test():
         return render_template("english.html")
 
 # to do something with the english test haven't figured it all out just yet.
-@app.route("/next", methods=["POST"])
+@app.route("/enext", methods=["POST"])
 @login_required
 def next():
+    answers = request.form.get("radanswer")
+    
     return render_template("/etests/etest2.html")
 
 @app.route("/stest", methods=["GET", "POST"])
