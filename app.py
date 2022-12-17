@@ -244,7 +244,9 @@ def eng_test():
 @login_required
 def next():
     answers = request.form.get("ans")
-    return apology(answers, 400)
+    answer = request.form.get("ans2")
+    ans = request.form.get("ans3")
+    return apology((answers+answer+ans), 400)
 
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
