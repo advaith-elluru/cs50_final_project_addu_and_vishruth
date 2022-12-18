@@ -88,7 +88,7 @@ function check_s_test(number){
         {
             correct++
         }
-        pct_correct = correct/number;
+        pct_correct = (correct/number).toFixed(6) * 100;
     })
 }
 
