@@ -235,7 +235,7 @@ def sci_test():
             return
 
         rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? LIMIT ?", category, difficulty, number)
-        return render_template
+        return render_template("science.html", rows = rows)
 
     else:
         return render_template("sci_choose.html")
