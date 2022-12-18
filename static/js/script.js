@@ -79,7 +79,9 @@ function check_m_test(decision, pronums, time, avgTime)
 }
 
 function check_s_test(){
-    $("#table_2 tbody tr").each()
+    $("#table_2 tbody tr").each(function() {
+        
+    })
 }
 
 
