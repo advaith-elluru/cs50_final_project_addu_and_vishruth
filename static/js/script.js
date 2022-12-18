@@ -75,12 +75,13 @@ function check_m_test(decision, pronums, time, avgTime)
         "json": JSON.stringify(x)
         "type": "math"
     }
-    $.ajax({type: "POST", url: "/results", data: data,});
+    $.ajax({type: "POST", url: "/results", data: data});
 }
 
 function check_s_test(){
     $("#table_2 tbody tr").each(function() {
-        var 
+        var client_answer = $(this).find("#sci_answer").val();
+        var answer
     })
 }
 
