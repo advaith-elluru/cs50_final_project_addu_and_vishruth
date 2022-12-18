@@ -154,7 +154,7 @@ def test():
 
         if not decision:
             return apology("Please select a choice", 407)
-        elif decision not in ["+", "-", "x", "/"]:
+        elif decision not in ["+", "-", "x", "/", "sqr", "cube"]:
             return apology("Please choose valid option", 407)
         elif not number:
             return apology("Please input a number of problems", 407)
