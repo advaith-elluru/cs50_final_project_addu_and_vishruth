@@ -77,7 +77,10 @@ function check_m_test(decision, pronums, time, avgTime)
     $.ajax({type: "POST", url: "/results", data: data,});
 }
 
-function check_s_test()
+function check_s_test(){
+    
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
