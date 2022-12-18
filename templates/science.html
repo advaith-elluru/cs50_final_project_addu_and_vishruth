@@ -7,12 +7,17 @@
 {% block main %}
     <h1 class="display-1"> Science </h1>
     <table>
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
         <tbody>
             {% for row in rows %}
                 <tr>
                     <td id="question">{{ row["question"] }}</td>
                     <td><input autocomplete="off" class="form-control mx-auto" placeholder="Answer" type="text"></td>
-                    <td id="answer">{{ row["answer"] }}</td>
+                    <td id="answer" style="display:none">{{ row["answer"] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
