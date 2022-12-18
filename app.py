@@ -235,7 +235,7 @@ def sci_test():
             return apology("Invalid number", 418)
 
         rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? ORDER BY RAND() LIMIT ?", category, difficulty, number)
-        return render_template("science.html", rows = rows)
+        return render_template("science.html", rows = rows, number = number)
 
     else:
         return render_template("sci_choose.html")
