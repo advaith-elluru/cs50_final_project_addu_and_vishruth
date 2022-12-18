@@ -81,7 +81,10 @@ function check_m_test(decision, pronums, time, avgTime)
 function check_s_test(){
     $("#table_2 tbody tr").each(function() {
         var client_answer = $(this).find("#sci_answer").val();
-        var answer
+        var answer = $(this).find("#answer").text();
+        var correct = 0
+
+        
     })
 }
 
