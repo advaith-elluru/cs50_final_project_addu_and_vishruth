@@ -73,12 +73,13 @@ function check_m_test(decision, pronums, time, avgTime)
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4)};
     var data = {
         "json": JSON.stringify(x)
+        "type": "math"
     }
     $.ajax({type: "POST", url: "/results", data: data,});
 }
 
 function check_s_test(){
-    
+
 }
 
 
