@@ -8,7 +8,7 @@ function choose()
     }
 }
 
-function check_test(decision, pronums, time, avgTime)
+function check_m_test(decision, pronums, time, avgTime)
 {
     $("#table tr").each(function() {
         one = $(this).find("#one").text();

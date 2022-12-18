@@ -143,7 +143,7 @@ def logout():
 
     return redirect("/")
 
-@app.route("/test", methods=["GET", "POST"])
+@app.route("/m_test", methods=["GET", "POST"])
 @login_required
 def test():
     if request.method == "POST":
@@ -165,7 +165,7 @@ def test():
         elif not (max > min):
             return apology("Minimum is not less than maximum", 410)
 
-        return render_template("test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
+        return render_template("math_test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
     else:
         return render_template("decide.html")
 
