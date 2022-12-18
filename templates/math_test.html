@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Test
+    Math Test
 {% endblock %}
 
 {% block main %}
@@ -18,7 +18,7 @@
     });
     </script>
 
-    <h1 class="display-1" id="test-header">Test</h1>
+    <h1 class="display-1" id="test-header">Math Test</h1>
     <br>
     <form>
         <div class="mb-2">
@@ -73,7 +73,7 @@
             </table>
         </div>
         <div class="mb-2">
-            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
+            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_m_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
         </div>
     </form>
 {% endblock %}

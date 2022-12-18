@@ -144,7 +144,7 @@ def logout():
 
     return redirect("/")
 
-@app.route("/test", methods=["GET", "POST"])
+@app.route("/m_test", methods=["GET", "POST"])
 @login_required
 def test():
     if request.method == "POST":
@@ -166,7 +166,7 @@ def test():
         elif not (max > min):
             return apology("Minimum is not less than maximum", 410)
 
-        return render_template("test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
+        return render_template("math_test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
     else:
         return render_template("decide.html")
 
@@ -186,56 +186,28 @@ def eng_test():
     if request.method == "POST":
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
-    # checks for errors in selection
-        if not difficulty:
-            return apology("Select a difficulty", 407)
-        elif difficulty not in ["easy", "mid", "hard"]:
-            return apology("Please choose a valid option", 407)
-        elif not type:
-            return apology("Select a type of test", 407)
-        elif type not in ["reading", "corrector", "writing"]:
-            return apology("Please choose a valid option", 407)
-    # we start to figure out what config the user wants and render a suitable test
-        else:
-            if type == "corrector":
-                if difficulty == 'easy':
-                    list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty == 'mid':
-                    list_1 = ["/etests/etest4.html","/etests/etest5.html","/etests/etest6.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty == 'hard':
-                    list_1 = ["/etests/etest7.html","/etests/etest8.html","/etests/etest9.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-            elif type == "reading":
-                if difficulty == 'easy':
-                    list_1 = ["/etests/etest10.html","/etests/etest11.html","/etests/etest12.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty == 'mid':
-                    list_1 = ["/etests/etest13.html","/etests/etest14.html","/etests/etest15.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty == 'hard':
-                    list_1 = ["/etests/etest16.html","/etests/etest17.html","/etests/etest18.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-            if type == "writing":
-                if difficulty == 'easy':
-                    list_1 = ["/etests/etest19.html","/etests/etest20.html","/etests/etest21.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty == 'mid':
-                    list_1 = ["/etests/etest22.html","/etests/etest23.html","/etests/etest24.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
-                elif difficulty =='hard':
-                    list_1 = ["/etests/etest25.html","/etests/etest26.html","/etests/etest27.html"]
-                    choice = random.randint(0,2)
-                    return render_template(list_1[choice])
+        if type == "corrector":
+            if difficulty == 'easy':
+                list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
+                return render_template(list_1[0])
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'hard':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+        elif type == "reading":
+            if difficulty == 'easy':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'hard':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+        if type == "writing":
+            if difficulty == 'easy':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty == 'mid':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
+            elif difficulty =='hard':
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
     else:
         return render_template("english.html")
 
@@ -252,9 +224,28 @@ def next():
 @login_required
 def sci_test():
     if request.method == "POST":
-        return apology("No tests to take right now!",404)
+        category = request.form.get("category")
+        difficulty = request.form.get("difficulty")
+        number = request.form.get("number")
+
+        if not category:
+            return apology("Please select a category", 418)
+        elif not category in ["Chemistry", "Biology", "Physics"]:
+            return apology("Invalid category", 418)
+        elif not difficulty:
+            return apology("Please select difficulty level", 418)
+        elif not difficulty in ["Easy", "Medium", "Hard"]:
+            return apology("Invalid dificulty level", 418)
+        elif not number:
+            return apology("Please input number of questions", 418)
+        elif not number.isdigit():
+            return apology("Invalid number", 418)
+
+        rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? ORDER BY RAND() LIMIT ?", category, difficulty, number)
+        return render_template("science.html", rows = rows, number = number)
+
     else:
-        return render_template("science.html")
+        return render_template("sci_choose.html")
 
 @app.route("/wtest", methods=["GET", "POST"])
 @login_required

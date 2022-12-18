@@ -5,14 +5,25 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="display-1"> Science </h1>
-    <table>
+    <h1 class="display-1">Science Test</h1>
+    <table id="table_2">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
         <tbody>
             {% for row in rows %}
                 <tr>
-                <!--  All the tests should show up here. We will insert them via jinja loop and python databases.-->
+                    <td id="question">{{ row["question"] }}</td>
+                    <td><input autocomplete="off" class="form-control mx-auto" id="sci_answer" placeholder="Answer" type="text"></td>
+                    <td id="answer" style="display:none">{{ row["answer"] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <div class="mb-2">
+        <button class="btn btn-primary" onclick="check_s_test({{ number }})" type="button">Submit</button>
+    </div>
 {% endblock %}
