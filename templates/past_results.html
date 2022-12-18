@@ -9,7 +9,8 @@
     <br>
     <table style="margin: auto">
         <tr style="border-bottom: 3px solid black">
-            <th style="border-right: 3px solid black">Number of Questions &nbsp</th>
+            <th style="border-right: 3px solid black">Type &nbsp</th>
+            <th style="border-right: 3px solid black">&nbsp Number of Questions &nbsp</th>
             <th style="border-right: 3px solid black">&nbsp Questions Correct &nbsp</th>
             <th style="border-right: 3px solid black">&nbsp Percentage Correct &nbsp</th>
             <th style="border-right: 3px solid black">&nbsp Time Taken &nbsp</th>
@@ -18,6 +19,7 @@
         </tr>
         {% for row in rows %}
             <tr>
+                <td style="border-right: 3px solid black">{{ row["type"] }} &nbsp</td>
                 <td style="border-right: 3px solid black">{{ row["number_of_questions"] }} questions</td>
                 <td style="border-right: 3px solid black">{{ row["questions_correct"] }} questions correct</td>
                 <td style="border-right: 3px solid black">{{ row["percent_correct"] }}%</td>
