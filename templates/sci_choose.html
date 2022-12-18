@@ -9,6 +9,7 @@
     <form action="/stest" method="post">
         <div class="mb-2">
             <select name="category" class="form-select">
+                <option value="None" disabled>Category</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Biology">Biology</option>
                 <option value="Physics">Physics</option>
@@ -16,10 +17,14 @@
         </div>
         <div class="mb-2">
             <select name="difficulty" class="form-select">
+                <option value="None" disabled>Difficulty</option>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
             </select>
+        </div>
+        <div>
+            <input autocomplete="off" class="form-control mx-auto" name="number" placeholder
         </div>
         <div class="mb-2">
             <button class="btn btn-primary" type="submit">Science Choose</button>
