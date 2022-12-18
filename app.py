@@ -5,6 +5,7 @@ from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 import datetime
 from helpers import apology, check_credit, login_required
+import random
 
 import json
 
@@ -182,10 +183,6 @@ def results():
 @login_required
 def eng_test():
     if request.method == "POST":
-        # NOTE_TO SELF ->
-            # remember to find books and texts which you can copy,
-            # and create multiple html pages for the test. randomly choose from a list of templates for each config,
-            # then render that template
         difficulty = request.form.get("difficulty")
         type = request.form.get("type")
         if type == "corrector":
@@ -212,6 +209,15 @@ def eng_test():
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
     else:
         return render_template("english.html")
+
+# to do something with the english test. Have an idea...still getting it to work
+@app.route("/enext", methods=["POST"])
+@login_required
+def next():
+    answers = request.form.get("ans")
+    answer = request.form.get("ans2")
+    ans = request.form.get("ans3")
+    return apology(answers+answer+ans, 400)
 
 @app.route("/stest", methods=["GET", "POST"])
 @login_required

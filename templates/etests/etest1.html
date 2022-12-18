@@ -5,14 +5,56 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="display-1">Test</h1>
-    <br>
-    <form>
-        <div class="mb-2">
-
+    <style>
+        p{
+            display: inline;
+        }
+    </style>
+    <h1 class="display-2" style="text-align:left; margin-left:200px;">Test</h1>
+    <form action="/enext" method="POST">
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <p>Find the error in the sentences. Click on the word that needs to be fixed.</p>
+            <br><br>
+            <p>1. Jim ran to the grocery store. They had run out of vegetables! </p>
+            <p>Jim returned home after an hour. He said that the checkout lines were too long.</p>
         </div>
-        <div class="mb-2">
-            <button class="btn btn-primary" type="button" onclick="alert('Submit')">Submit</button>
+        <br>
+        <!-- Answer Options for questions-->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <input type="radio" value="There is no mistake." id="one" name="ans">There is No Mistake</input><br>
+            <input type="radio" value="spelling" id="two" name="ans">"Vegetables" is spelled incorrectly</input><br>
+            <input type="radio" value="punctuation" id="three" name="ans">There is a punctuation error.</input><br>
+            <input type="radio" value="quotes" id="four" name="ans">Forgot to use quotations.</input><br>
+        </div>
+        <br>
+        <!-- second question -->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <p>2. Life was good for Mark, but it couldve been better.</p>
+            <p>He had ran out of video games to play.</p>
+        </div>
+        <br>
+        <!-- Answer Options for questions-->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <input type="radio" value="There is no mistake." id="one" name="ans2">There is No Mistake</input><br>
+            <input type="radio" value="spelling" id="two" name="ans2">"Better" is spelled incorrectly</input><br>
+            <input type="radio" value="puncutation" id="three" name="ans2">Comma is used incorrectly</input><br>
+            <input type="radio" value="quotes" id="four" name="ans2">"Could've" instead of "couldve"</input><br>
+        </div>
+        <!-- 3rd question -->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <p>3. "Do we need to go to the other world?" asked Marcus.</p>
+            <p>"Yes" he shouted.</p>
+        </div>
+        <br>
+        <!-- Answer Options for questions-->
+        <div class="mb-2" style="text-align:left; margin-left:210px; font-size:20px;">
+            <input type="radio" value="There is no mistake." id="one" name="ans3">There is No Mistake</input><br>
+            <input type="radio" value="spelling" id="two" name="ans3">"Better" is spelled incorrectly</input><br>
+            <input type="radio" value="puncutation" id="three" name="ans3">Question mark is incorrect</input><br>
+            <input type="radio" value="quotes" id="four" name="ans3">Comma inside quotes missing</input><br>
+        </div>
+        <div class="mb-2" style="text-align:left; margin-left:250px">
+            <button type="submit">Submit</button>
         </div>
     </form>
 {% endblock %}
