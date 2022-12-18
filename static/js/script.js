@@ -96,10 +96,13 @@ function check_s_test(number){
 }
 
 
+function check_e_test(){
+    document.addEventListener('DOMContentLoaded', function(){
+        let client_answer = document.querySelector('ans');
+        alert(client_answer)
+    })
+}
 document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-function check_e_test(){
-    
-}
