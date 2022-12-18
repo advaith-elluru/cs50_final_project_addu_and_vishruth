@@ -99,3 +99,7 @@ function check_s_test(number){
 document.addEventListener("DOMContentLoaded", function () {
 
 })
+
+function check_e_test(){
+    
+}
