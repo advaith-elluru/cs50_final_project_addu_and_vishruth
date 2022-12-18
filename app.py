@@ -195,21 +195,21 @@ def eng_test():
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'hard':
-                apology("No " + type + " tests to take in category " + difficulty, 404)
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
         elif type == "reading":
             if difficulty == 'easy':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'hard':
-                apology("No " + type + " tests to take in category " + difficulty, 404)
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
         if type == "writing":
             if difficulty == 'easy':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty == 'mid':
                 return apology("No " + type + " tests to take in category " + difficulty, 404)
             elif difficulty =='hard':
-                apology("No " + type + " tests to take in category " + difficulty, 404)
+                return apology("No " + type + " tests to take in category " + difficulty, 404)
     else:
         return render_template("english.html")
 
@@ -222,9 +222,9 @@ def sci_test():
         number = request.form.get("number")
 
         if not category:
-            return
+            return apology("Please select a category", 418)
         elif not category in ["Chemistry", "Biology", "Physics"]:
-            return
+            return apology("")
         elif not difficulty:
             return
         elif not difficulty in ["Easy", "Medium", "Hard"]:
