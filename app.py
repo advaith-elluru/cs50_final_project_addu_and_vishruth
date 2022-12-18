@@ -219,6 +219,21 @@ def sci_test():
     if request.method == "POST":
         category = request.form.get("category")
         difficulty = request.form.get("difficulty")
+        number = request.form.get("number")
+
+        if not category:
+            return
+        elif not category in ["Chemistry", "Biology", "Physics"]:
+            return
+        elif not difficulty:
+            return
+        elif not difficulty in ["Easy", "Medium", "Hard"]:
+            return
+        elif not number:
+            return
+        elif not number.isdigit():
+            return
+
     else:
         return render_template("sci_choose.html")
 
