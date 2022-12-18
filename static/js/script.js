@@ -74,7 +74,7 @@ function check_m_test(decision, pronums, time, avgTime)
     $("#table_1").show();
     $("#test-header").text("Results");
 
-    x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "math"};
+    x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Math"};
     var data = {
         "json": JSON.stringify(x)
     }
