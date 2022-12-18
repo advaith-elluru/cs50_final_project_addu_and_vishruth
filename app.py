@@ -224,7 +224,7 @@ def sci_test():
         if not category:
             return apology("Please select a category", 418)
         elif not category in ["Chemistry", "Biology", "Physics"]:
-            return apology("")
+            return apology("Unavailable ")
         elif not difficulty:
             return
         elif not difficulty in ["Easy", "Medium", "Hard"]:
