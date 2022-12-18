@@ -224,15 +224,15 @@ def sci_test():
         if not category:
             return apology("Please select a category", 418)
         elif not category in ["Chemistry", "Biology", "Physics"]:
-            return apology("Unavailable ")
+            return apology("Invalid category", 418)
         elif not difficulty:
-            return
+            return apology("Please select difficulty level", 418)
         elif not difficulty in ["Easy", "Medium", "Hard"]:
-            return
+            return apology("Invalid dificulty level", 418)
         elif not number:
-            return
+            return apology("Please input number of questions", 418)
         elif not number.isdigit():
-            return
+            return apology("Invalid number", 418)
 
         rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? ORDER BY RAND() LIMIT ?", category, difficulty, number)
         return render_template("science.html", rows = rows)
