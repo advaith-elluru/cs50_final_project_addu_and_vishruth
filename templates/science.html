@@ -10,7 +10,9 @@
         <tbody>
             {% for row in rows %}
                 <tr>
-                    <td></td>
+                    <td id="question">{{ row["question"] }}</td>
+                    <td><input autocomplete="off" class="form-control mx-auto" placeholder="Answer" type="text"></td>
+                    <td id="answer">{{ row["answer"] }}</td>
                 </tr>
             {% endfor %}
         </tbody>
