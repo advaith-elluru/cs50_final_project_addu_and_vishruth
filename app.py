@@ -234,6 +234,9 @@ def sci_test():
         elif not number.isdigit():
             return
 
+        rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? LIMIT ?", category, difficulty, number)
+        return render_template
+
     else:
         return render_template("sci_choose.html")
 
