@@ -217,9 +217,10 @@ def eng_test():
 @login_required
 def sci_test():
     if request.method == "POST":
-        return apology("No tests to take right now!",404)
+        category = request.form.get("category")
+        difficulty = request.form.get("difficulty")
     else:
-        return render_template("science.html")
+        return render_template("sci_choose.html")
 
 @app.route("/wtest", methods=["GET", "POST"])
 @login_required
