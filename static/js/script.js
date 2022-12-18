@@ -6,6 +6,10 @@ function choose()
     {
         y.style.display = "block";
     }
+    else
+    {
+        y.style.display = "none";
+    }
 }
 
 function check_m_test(decision, pronums, time, avgTime)
