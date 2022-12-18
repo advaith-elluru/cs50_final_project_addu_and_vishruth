@@ -84,7 +84,7 @@ function check_s_test(){
         var answer = $(this).find("#answer").text();
         var correct = 0
 
-        
+        if (client_answer === answer)
     })
 }
 
