@@ -252,7 +252,7 @@ def ws_test():
     if request.method == "POST":
         return apology("No tests to take right now!",404)
     else:
-        return render_template("WS.html")
+        return render_template("ws_choose.html")
 
 @app.route("/past_results", methods=["GET", "POST"])
 @login_required
