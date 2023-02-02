@@ -96,9 +96,16 @@ function check_s_test(number){
 }
 
 
-function check_ws_test(){
+function check_ws_test(number){
     document.addEventListener('DOMContentLoaded', function(){
-        let client_answer = document.querySelector('ans');
+        let client_answer = document.querySelector('#ans');
+        let answer = document.querySelector('#answer')
+        var correct_ans = 0
+        if(client_answer.value === answer.value)
+        {
+            correct_ans++
+        }
+        percentCorrect = (correct_ans/number).toFixed(6) * 100
         alert(client_answer)
     })
 }
