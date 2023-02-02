@@ -250,6 +250,22 @@ def sci_test():
 @login_required
 def ws_test():
     if request.method == "POST":
+        category = request.form.get("category")
+        difficulty = request.form.get("difficulty")
+        number = request.form.get("number")
+
+        if not category:
+            return apology("Please select a category", 418)
+        elif not category in ["MWH", "USH", "CLH"]:
+            return apology("Invalid category", 418)
+        elif not difficulty:
+            return apology("Please select difficulty level", 418)
+        elif not difficulty in ["Easy", "Hard"]:
+            return apology("Invalid dificulty level", 418)
+        elif not number:
+            return apology("Please input number of questions", 418)
+        elif not number.isdigit():
+            return apology("Invalid number", 418)
         return apology("No tests to take right now!",404)
     else:
         return render_template("ws_choose.html")
