@@ -1,3 +1,3 @@
 # cs50_final_project
-  This is our final project for CS50. This project is an application for the web. It is an educational website and teaches about the 4 core subjects in the US, math, science, english and world studies.
-  It is a python and html based project using flask.
+  This is our final project for CS50. This project is an application for the web. It is an educational website and tests 3 of the 4 core subjects in the US, math, science, and world studies.
+  It is a python and html based project using flask. We also used javascript and jquery to analyze the results, with sql databases for a list of questions and user statistics. We have a fake subsription plan, which requires a valid credit card number. We don't expect anyone to use their own credit card number, and highly advise against it since this is an informal project. We are used PayPal's test numbers to check if our credit checking function worked properly.
