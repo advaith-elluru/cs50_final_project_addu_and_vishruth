@@ -266,7 +266,9 @@ def ws_test():
             return apology("Please input number of questions", 418)
         elif not number.isdigit():
             return apology("Invalid number", 418)
-        return apology("No tests to take right now!",404)
+
+        rows = db.execute("SELECT * FROM ss_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
+        return render_template("science.html", rows = rows, number = number)
     else:
         return render_template("ws_choose.html")
 
