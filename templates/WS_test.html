@@ -5,6 +5,19 @@
 {% endblock %}
 
 {% block main %}
+    <script>
+    $(document).ready(function() {
+        startTime = Date.now();
+
+        $("#test_submit").click(function() {
+            endTime = Date.now();
+            seconds = (endTime - startTime) / 1000;
+
+            avgTime = seconds / {{ numbers }};
+        });
+    });
+    </script>
+
     <h1 class="display-1"> World Studies </h1>
     <table>
         <tbody>
