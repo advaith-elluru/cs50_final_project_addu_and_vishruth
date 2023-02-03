@@ -29,9 +29,9 @@
             {% for row in rows %}
                 <tr>
                     <td id="question">{{ row.question }}</td>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}></td>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}></td>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}></td>
+                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}> 1</td>
+                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}> 2</td>
+                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}> 3</td>
                     <td id="answer" style="display:none">{{ row.answer }}</td>
                 </tr>
             {% endfor %}
