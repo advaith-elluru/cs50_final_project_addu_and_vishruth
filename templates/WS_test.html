@@ -18,11 +18,13 @@
     });
     </script>
     <h1 class="display-1">World Studies Test</h1>
-    <table id="table_2">
+    <table id="table_2" style="text-align:center;">
         <thead>
             <tr>
                 <th>Question</th>
-                <th colspan = 3>Answer</th>
+                <th></th>
+                <th></th>
+                <th>Answer</th>
             </tr>
         </thead>
         <tbody>
@@ -31,9 +33,9 @@
                     <td id="question">{{ row.question }}</td>
                 </tr>
                 <tr>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}>{{row.choice_1}}</td>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}>{{row.choice_2}}</td>
-                    <td><input type="radio"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}>{{row.choice_3}}</td>
+                    <td><input type="radio" style = "display:inline-block; width:10px;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}>{{row.choice_1}}</td>
+                    <td><input type="radio" style = "display:inline-block; width:10px;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}>{{row.choice_2}}</td>
+                    <td><input type="radio" style = "display:inline-block; width:10px;"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}>{{row.choice_3}}</td>
                     <td id="answer" style="display:none">{{ row.answer }} 4</td>
                 </tr>
             {% endfor %}
