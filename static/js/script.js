@@ -98,8 +98,8 @@ function check_s_test(number){
 
 function check_ws_test(number){
     document.addEventListener('DOMContentLoaded', function(){
-        let client_answer = document.querySelector('#ans');
-        let answer = document.querySelector('#answer')
+        let client_answer = document.querySelectorAll('#ans');
+        let answer = document.querySelectorAll('#answer')
         var correct_ans = 0
         if(client_answer.value === answer.value)
         {
