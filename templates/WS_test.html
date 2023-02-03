@@ -33,9 +33,9 @@
                     <td id="question">{{ row.question }}</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" style = "display:inline-block; width:10px;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}>{{row.choice_1}}</td>
-                    <td><input type="checkbox" style = "display:inline-block; width:10px;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}>{{row.choice_2}}</td>
-                    <td><input type="checkbox" style = "display:inline-block; width:10px;"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}>{{row.choice_3}}</td>
+                    <td><input type="checkbox" style = "display:inline-block;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_1}}>{{row.choice_1}}</td>
+                    <td><input type="checkbox" style = "display:inline-block;" class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_2}}>{{row.choice_2}}</td>
+                    <td><input type="checkbox" style = "display:inline-block;"  class="form-control mx-auto" id="ans" name="ans_choice" value= {{row.choice_3}}>{{row.choice_3}}</td>
                     <td id="answer" style="display:none">{{ row.answer }} 4</td>
                 </tr>
             {% endfor %}
