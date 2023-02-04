@@ -13,7 +13,7 @@
             endTime = Date.now();
             seconds = (endTime - startTime) / 1000;
 
-            avgTime = seconds / {{ numbers }};
+            avgTime = seconds / '{{ numbers }}';
         });
     });
     </script>
@@ -40,6 +40,7 @@
         </tbody>
     </table>
     <div class="mb-2">
+        <br>
         <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test('{{ number }}')">Submit</button>
     </div>
 {% endblock %}
