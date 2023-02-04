@@ -96,7 +96,7 @@ function check_s_test(number){
 }
 
 
-function chk_ws_test(number){
+function chk_ws_test(number, seconds, avgTime){
     document.addEventListener('DOMContentLoaded', function(){
         let client_answer = document.querySelectorAll('#ans');
         let answer = document.querySelectorAll('#answer');
@@ -108,8 +108,8 @@ function chk_ws_test(number){
         }
 
         percentCorrect = (correct_ans/number).toFixed(6) * 100;
-        alert(correct_ans);
-    })
+        alert('correct_ans');
+    });
 }
 document.addEventListener("DOMContentLoaded", function () {
 
