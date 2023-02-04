@@ -101,7 +101,7 @@ function check_ws_test(number){
         let client_answer = document.querySelectorAll('#ans');
         let answer = document.querySelectorAll('#answer')
         var correct_ans = 0
-        for(int i = 0; i < client_answer.length(); i++)
+        for(var i = 0; i < client_answer.length(); i++)
         {
             if(client_answer[i].value === answer[i].value)
             {
