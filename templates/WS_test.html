@@ -36,12 +36,12 @@
                     <td><input type="text" style = "display:inline-block;" class="form-control mx-auto" id="ans" name="ans_choice" placeholder = 'Answer'></td>
                     <td id="answer" style="display:none">{{ row.answer }} 4</td>
                 </tr>
+                <tr><td><br></td></tr>
             {% endfor %}
         </tbody>
     </table>
     <div class="mb-2">
-        <br>
-        <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test('{{ number }}')">Submit</button>
+        <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test({{ number }})">Submit</button>
     </div>
 {% endblock %}
 

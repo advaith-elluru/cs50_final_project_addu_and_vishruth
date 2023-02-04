@@ -96,7 +96,7 @@ function check_s_test(number){
 }
 
 
-function chk_ws_test(number, seconds, avgTime){
+function chk_ws_test(number){
     document.addEventListener('DOMContentLoaded', function(){
         let client_answer = document.querySelectorAll('#ans');
         let answer = document.querySelectorAll('#answer');
