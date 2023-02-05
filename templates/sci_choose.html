@@ -7,24 +7,24 @@
 {% block main %}
     <h1 class="display-1">Science Choose</h1>
     <form action="/stest" method="post">
-        <div class="mb-2">
-            <select name="category" class="form-select">
-                <option value="None" disabled>Category</option>
+        <div class="mb-2" style="transform:translate(25%, 0%)">
+            <select name="category" class="form-select" style="width: 50%">
+                <option value="None" disabled selected>Category</option>
                 <option value="Chemistry">Chemistry</option>
                 <option value="Biology">Biology</option>
                 <option value="Physics">Physics</option>
             </select>
         </div>
-        <div class="mb-2">
-            <select name="difficulty" class="form-select">
-                <option value="None" disabled>Difficulty</option>
+        <div class="mb-2" style="transform:translate(25%, 0%)">
+            <select name="difficulty" class="form-select" style="width: 50%">
+                <option value="None" disabled selected>Difficulty</option>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
             </select>
         </div>
         <div>
-            <input autocomplete="off" class="form-control mx-auto" name="number" placeholder="How many problems do you want?" type="number">
+            <input autocomplete="off" class="form-control mx-auto" style="width: 50%" name="number" placeholder="How many problems do you want (Max is 10)?" type="number">
         </div>
         <div class="mb-2">
             <button class="btn btn-primary" type="submit">Science Choose</button>
