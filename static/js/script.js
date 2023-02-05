@@ -85,7 +85,7 @@ function check_m_test(decision, pronums, time, avgTime)
     $.ajax({type: "POST", url: "/results", data: data});
 }
 
-function check_s_test(number, pronums, time, avgTime){
+function check_s_test(number, time, avgTime){
     $("#table_2 tbody tr").each(function() {
         var client_answer = $(this).find("#sci_answer").val();
         var answer = $(this).find("#answer").text();
@@ -95,9 +95,8 @@ function check_s_test(number, pronums, time, avgTime){
         {
             correct++;
         }
-        pct_correct = (correct/number).toFixed(6) * 100;
 
-        x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Science"};
+        x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(number), "percent_correct": (parseInt(correct) / parseInt(number)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Science"};
         var data = {
             "json": JSON.stringify(x)
         }
