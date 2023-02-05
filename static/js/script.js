@@ -101,19 +101,19 @@ function check_s_test(number){
 
 
 function chk_ws_test(number){
-    document.addEventListener('DOMContentLoaded', function(){
-        let client_answer = document.querySelectorAll('#ans');
-        let answer = document.querySelectorAll('#answer');
-        var correct_ans = 0;
-        for(var i = 0; i < client_answer.length(); i++){
-            if(client_answer[i].value === answer[i].value){
-                correct_ans++
-            }
-        }
 
-        percentCorrect = (correct_ans/number).toFixed(6) * 100;
-        alert('correct_ans');
-    });
+    let client_answer = document.querySelectorAll('#ans');
+    let answer = document.querySelectorAll('#answer');
+    var correct_ans = 0;
+    for(var i = 0; i < client_answer.length(); i++){
+        if(client_answer[i].value === answer[i].value){
+            correct_ans++
+        }
+    }
+
+    percentCorrect = (correct_ans/number).toFixed(6) * 100;
+    alert('correct_ans');
+
 }
 document.addEventListener("DOMContentLoaded", function () {
 
