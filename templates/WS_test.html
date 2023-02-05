@@ -13,7 +13,7 @@
             endTime = Date.now();
             seconds = (endTime - startTime) / 1000;
 
-            avgTime = seconds / '{{ number }}';
+            avgTime = seconds / {{ number }};
         });
     });
     </script>
@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td><input type="text" style = "display:inline-block;" class="form-control mx-auto" id="ans" name="ans_choice" placeholder = 'Answer'></td>
-                    <td id="answer" style="display:none">{{ row.answer }} 4</td>
+                    <td></td><td></td><td id="answer" style="display:none">{{ row.answer }}</td>
                 </tr>
                 <tr><td><br></td></tr>
             {% endfor %}
