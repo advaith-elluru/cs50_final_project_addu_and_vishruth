@@ -237,7 +237,7 @@ def sci_test():
             return apology("Invalid dificulty level", 418)
         elif not number:
             return apology("Please input number of questions", 418)
-        elif not number.isdigit():
+        elif not number.isdigit() or int(number) <= 10:
             return apology("Invalid number", 418)
 
         rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
