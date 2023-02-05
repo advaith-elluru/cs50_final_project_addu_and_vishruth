@@ -85,7 +85,7 @@ function check_m_test(decision, pronums, time, avgTime)
     $.ajax({type: "POST", url: "/results", data: data});
 }
 
-function check_s_test(number){
+function check_s_test(number, pronums, time, avgTime){
     $("#table_2 tbody tr").each(function() {
         var client_answer = $(this).find("#sci_answer").val();
         var answer = $(this).find("#answer").text();
