@@ -31,16 +31,26 @@
                 </thead>
                 <tbody>
                     {% for number in range(numbers) %}
-                        {if }
-                        <tr>
-                            <td>{{ number + 1 }} ) &nbsp</td>
-                            <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                            <td> {{ decision }} </td>
-                            <td id="two">{{ range(min, (max + 1)) | random }}</td>
-                            <td>=</td>
-                            <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
-                            <td style="display:none; border-left: 3px solid black" id="answer"></td>
-                        </tr>
+                        {% if decision in "2" %}
+                            <tr>
+                                <td>{{ number + 1 }} ) &nbsp</td>
+                                <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                                <td><sup>{{ decision }}</sup></td>
+                                <td>=</td>
+                                <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                                <td style="display:none; border-left: 3px solid black" id="answer"></td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td>{{ number + 1 }} ) &nbsp</td>
+                                <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                                <td> {{ decision }} </td>
+                                <td id="two">{{ range(min, (max + 1)) | random }}</td>
+                                <td>=</td>
+                                <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                                <td style="display:none; border-left: 3px solid black" id="answer"></td>
+                            </tr>
+                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
