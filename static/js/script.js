@@ -101,7 +101,6 @@ function check_s_test(number){
 
 
 function chk_ws_test(number){
-
     let client_answer = document.querySelectorAll('#ans');
     let answer = document.querySelectorAll('#answer');
     var correct_ans = 0;
@@ -113,7 +112,6 @@ function chk_ws_test(number){
 
     percentCorrect = (correct_ans/number).toFixed(6) * 100;
     alert('correct_ans');
-
 }
 document.addEventListener("DOMContentLoaded", function () {
 
