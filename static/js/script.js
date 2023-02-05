@@ -104,17 +104,21 @@ function chk_ws_test(number){
     let client_answer = document.querySelectorAll('#ans');
     let answer = document.querySelectorAll('#answer');
     var correct_ans = 0;
+
     for(var i = 0; i < client_answer.length; i++){
-        if(client_answer[i].value === answer[i].value)
+        let value_ans = client_answer[i].value;
+        let result = value_ans.localeCompare(answer[i].innerText);
+        if(result == 0)
         {
-            correct_ans++
+            correct_ans = correct_ans + 1;
         }
         answer[i].style.display = 'block';
+
+        alert(correct_ans);
     }
 
     percentCorrect = (correct_ans/number).toFixed(6) * 100;
 
-    alert(correct_ans);
 
 }
 document.addEventListener("DOMContentLoaded", function () {
