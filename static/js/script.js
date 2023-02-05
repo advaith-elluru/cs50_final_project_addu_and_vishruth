@@ -32,9 +32,13 @@ function check_m_test(decision, pronums, time, avgTime)
         {
             $answer.text(parseInt(one) * parseInt(two));
         }
-        else
+        else if (decision === "/")
         {
             $answer.text(parseInt(one) / parseInt(two));
+        }
+        else if (decision === "2")
+        {
+            $answer.text(parseInt(one) ** 2)
         }
     });
 
