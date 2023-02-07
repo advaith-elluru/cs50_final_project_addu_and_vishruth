@@ -105,7 +105,7 @@ function check_s_test(number, time, avgTime){
 }
 
 
-function chk_ws_test(number){
+function chk_ws_test(number, seconds, avgTime){
     let client_answer = document.querySelectorAll('#ans');
     let answer = document.querySelectorAll('#answer');
     var correct_ans = 0;
@@ -116,16 +116,30 @@ function chk_ws_test(number){
         if(result == 0)
         {
             correct_ans = correct_ans + 1;
+            client_answer[i].style.backgroundColor = 'green';
+        }
+        else if(result != 0)
+        {
+            client_answer[i].style.backgroundColor = 'red';
         }
         answer[i].style.display = 'block';
-
-        alert(correct_ans);
     }
 
     percentCorrect = (correct_ans/number).toFixed(6) * 100;
+    document.querySelector('#avg_time_taken').innerHTML = avgTime;
+    document.querySelector('#time_taken').innerHTML = seconds;
+    document.querySelector('#percent_correct').innerHTML = percentCorrect;
+    document.querySelector('#number_correct').innerHTML = correct_ans;
 
+    document.querySelector('#table_3').style.display = 'inline-block';
 
+    x = {"number_correct": parseInt(correct_ans), "number_of_questions": parseInt(number), "percent_correct": (parseInt(correct) / parseInt(number)).toFixed(6) * 100, "time": parseFloat(seconds), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Social Studies"};
+        var data = {
+            "json": JSON.stringify(x)
+        }
+        $ajax({type: "POST", url: "/results", data: data})
 }
+
 document.addEventListener("DOMContentLoaded", function () {
 
 })
