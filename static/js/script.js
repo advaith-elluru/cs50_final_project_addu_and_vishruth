@@ -125,15 +125,16 @@ function chk_ws_test(number, seconds, avgTime){
         answer[i].style.display = 'block';
     }
 
-    percentCorrect = (correct_ans/number).toFixed(6) * 100;
+    var percentCorrect = (correct_ans/number).toFixed(6) * 100;
     document.querySelector('#avg_time_taken').innerHTML = avgTime;
     document.querySelector('#time_taken').innerHTML = seconds;
     document.querySelector('#percent_correct').innerHTML = percentCorrect;
     document.querySelector('#number_correct').innerHTML = correct_ans;
-
+    var time = seconds;
+    var avg_Time = avgTime;
     document.querySelector('#table_3').style.display = 'inline-block';
 
-    x = {"number_correct": parseInt(correct_ans), "number_of_questions": parseInt(number), "percent_correct": (parseInt(correct) / parseInt(number)).toFixed(6) * 100, "time": parseFloat(seconds), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Social Studies"};
+    x = {"number_correct": parseInt(correct_ans), "number_of_questions": parseInt(number), "percent_correct": percentCorrect, "time": parseFloat(time), "avg_time": parseFloat(avg_Time).toFixed(4), "category": "Social Studies"};
         var data = {
             "json": JSON.stringify(x)
         }
