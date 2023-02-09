@@ -125,7 +125,7 @@ function chk_ws_test(number, seconds, avgTime){
         answer[i].style.display = 'block';
     }
 
-    var percentCorrect = (correct_ans/number).toFixed(6) * 100;
+    percentCorrect = (correct_ans/number).toFixed(6) * 100;
     document.querySelector('#avg_time_taken').innerHTML = avgTime;
     document.querySelector('#time_taken').innerHTML = seconds;
     document.querySelector('#percent_correct').innerHTML = percentCorrect;
