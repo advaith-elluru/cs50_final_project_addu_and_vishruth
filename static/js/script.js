@@ -132,6 +132,7 @@ function chk_ws_test(number, seconds, avgTime){
     document.querySelector('#number_correct').innerHTML = correct_ans;
     var time = seconds;
     var avg_Time = avgTime;
+    // Var
     document.querySelector('#table_3').style.display = 'inline-block';
 
     x = {"number_correct": parseInt(correct_ans), "number_of_questions": parseInt(number), "percent_correct": percentCorrect, "time": parseFloat(time), "avg_time": parseFloat(avg_Time).toFixed(4), "category": "Social Studies"};
