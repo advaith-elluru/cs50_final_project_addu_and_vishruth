@@ -197,7 +197,7 @@ def sci_test():
         elif not number.isdigit() or int(number) > 10:
             return apology("Invalid number", 418)
 
-        rows = db.execute("SELECT * FROM sci_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
+        rows = db.execute("SELECT * FROM sci_questions WHERE type = ? ORDER BY random() LIMIT ?", category, number)
         return render_template("science.html", rows = rows, number = number)
 
     else:
