@@ -36,8 +36,30 @@
             {% endfor %}
         </tbody>
     </table>
-    <table id="table_3">
-        
+    <table style="display:none" id="table_3">
+        <thead>
+            <tr>
+                <th style="border-bottom: 3px solid black" colspan="2">Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border-right: 3px solid black">Number correct  &nbsp</td>
+                <td id="number_correct"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Percent correct  &nbsp</td>
+                <td id="percent_correct"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Time taken &nbsp</td>
+                <td id="time_taken"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Average time taken &nbsp</td>
+                <td id="avg_time_taken"></td>
+            </tr>
+        </tbody>
     </table>
     <div class="mb-2">
         <button class="btn btn-primary" onclick="check_s_test({{ number }})" type="button">Submit</button>
