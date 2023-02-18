@@ -176,48 +176,9 @@ def results():
     x = request.form.get("json")
     y = json.loads(x)
 
-    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken, type) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"], y["category"])
+    db.execute("INSERT INTO results(user_id, questions_correct, number_of_questions, time_taken, datetime, percent_correct, avg_time_taken, type) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+                session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"], y["category"])
     return ""
-
-@app.route("/etest", methods=["GET", "POST"])
-@login_required
-def eng_test():
-    if request.method == "POST":
-        difficulty = request.form.get("difficulty")
-        type = request.form.get("type")
-        if type == "corrector":
-            if difficulty == 'easy':
-                list_1 = ["/etests/etest1.html","/etests/etest2.html","/etests/etest3.html"]
-                return render_template(list_1[0])
-            elif difficulty == 'mid':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-            elif difficulty == 'hard':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-        elif type == "reading":
-            if difficulty == 'easy':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-            elif difficulty == 'mid':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-            elif difficulty == 'hard':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-        if type == "writing":
-            if difficulty == 'easy':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-            elif difficulty == 'mid':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-            elif difficulty =='hard':
-                return apology("No " + type + " tests to take in category " + difficulty, 404)
-    else:
-        return render_template("english.html")
-
-# to do something with the english test. Have an idea...still getting it to work
-@app.route("/enext", methods=["POST"])
-@login_required
-def next():
-    answers = request.form.get("ans")
-    answer = request.form.get("ans2")
-    ans = request.form.get("ans3")
-    return apology(answers+answer+ans, 400)
 
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
@@ -266,6 +227,8 @@ def ws_test():
             return apology("Please input number of questions", 418)
         elif not number.isdigit():
             return apology("Invalid number", 418)
+        elif number > 10:
+            return apology('Too large of number' 418)
 
         rows = db.execute("SELECT * FROM ss_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
         return render_template("WS_test.html", rows = rows, number = number)

@@ -30,18 +30,51 @@
         <tbody>
             {% for row in rows %}
                 <tr>
-                    <td id="question">{{ row.question }} {{row.choice_1}}, {{row.choice_2}}, or {{row.choice_3}}</td>
+                    <td id="question">{{ row.question }}</td>
                 </tr>
                 <tr>
-                    <td><input type="text" style = "display:inline-block;" class="form-control mx-auto" id="ans" name="ans_choice" placeholder = 'Answer'></td>
+                    <td><select name="ans" id = 'ans' class="form-select">
+                        <option value="None" disabled selected>Answer</option>
+                        <option value="{{row.choice_1}}">{{row.choice_1}}</option>
+                        <option value="{{row.choice_2}}">{{row.choice_2}}</option>
+                        <option value="{{row.choice_3}}">{{row.choice_3}}</option>
+                    </select></td>
                     <td></td><td></td><td id="answer" style="display:none">{{ row.answer }}</td>
                 </tr>
                 <tr><td><br></td></tr>
             {% endfor %}
         </tbody>
     </table>
+
+    <table style="display:none" id="table_3">
+        <thead>
+            <tr>
+                <th style="border-bottom: 3px solid black" colspan="2">Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border-right: 3px solid black">Number correct  &nbsp</td>
+                <td id="number_correct"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Percent correct  &nbsp</td>
+                <td id="percent_correct"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Time taken &nbsp</td>
+                <td id="time_taken"></td>
+            </tr>
+            <tr>
+                <td style="border-right: 3px solid black">Average time taken &nbsp</td>
+                <td id="avg_time_taken"></td>
+            </tr>
+        </tbody>
+    </table>
+
     <div class="mb-2">
-        <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test('{{ number }}')">Submit</button>
+        <br><br>
+        <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test('{{ number }}', seconds, avgTime)">Submit</button>
     </div>
 {% endblock %}
 
