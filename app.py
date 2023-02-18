@@ -192,10 +192,6 @@ def sci_test():
             return apology("Please select a category", 418)
         elif not category in ["Chemistry", "Biology", "Physics"]:
             return apology("Invalid category", 418)
-        elif not difficulty:
-            return apology("Please select difficulty level", 418)
-        elif not difficulty in ["Easy", "Medium", "Hard"]:
-            return apology("Invalid dificulty level", 418)
         elif not number:
             return apology("Please input number of questions", 418)
         elif not number.isdigit() or int(number) > 10:
