@@ -94,6 +94,11 @@ function check_s_test(number, time, avgTime){
         if ($client_answer.val().toLowerCase() === $answer.text().toLowerCase())
         {
             correct++;
+            $client_answer.css("background-color", "green");
+        }
+        else
+        {
+            $client_answer.css("background-color", "red");
         }
 
         $answer.show()
