@@ -89,7 +89,7 @@ function check_s_test(number, time, avgTime){
     var correct = 0;
     $("#table_2 tbody tr").each(function() {
         var client_answer = $(this).find("#sci_answer").val();
-        var answer = $(this).find("#answer").text();
+        var $answer = $(this).find("#answer");
 
         if (client_answer.toLowerCase() === answer.toLowerCase())
         {
