@@ -113,7 +113,7 @@ function check_s_test(number, time, avgTime){
         var data = {
             "json": JSON.stringify(x)
         }
-        $ajax({type: "POST", url: "/results", data: data})
+        $.ajax({type: "POST", url: "/results", data: data})
     })
 }
 
