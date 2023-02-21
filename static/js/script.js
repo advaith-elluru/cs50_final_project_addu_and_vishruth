@@ -96,7 +96,7 @@ function check_s_test(number, time, avgTime){
             correct++;
         }
 
-        $(this).find("#answer").show()
+        $answer.show()
     })
 
     $("#table_2 thead tr #answer_header").css("display", "block");
