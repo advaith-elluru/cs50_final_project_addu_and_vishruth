@@ -96,6 +96,19 @@ function check_s_test(number, time, avgTime){
             correct++;
         }
 
+        $("#table_2 thead tr #answer_header").css("display", "block");
+        $("#test_submit").hide();
+
+        $("#number_correct").text("\xa0" + parseInt(correct) + " problems correct");
+        $("#percent_correct").text((parseInt(correct) / parseInt(pronums)).toFixed(6) * 100 + "%");
+        $("#time_taken").text(parseFloat(time) + " seconds")
+        $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime).toFixed(4) + "\xa0 seconds per problem")
+
+        $("#table_2").css("display", "inline-block");
+        $("#table_3").css("display", "inline-block");
+        $("#table_3").show();
+        $("#test-header").text("Results");
+
         x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(number), "percent_correct": (parseInt(correct) / parseInt(number)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Science"};
         var data = {
             "json": JSON.stringify(x)
