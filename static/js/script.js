@@ -91,7 +91,7 @@ function check_s_test(number, time, avgTime){
         var client_answer = $(this).find("#sci_answer").val();
         var $answer = $(this).find("#answer");
 
-        if (client_answer.toLowerCase() === answer.toLowerCase())
+        if (client_answer.toLowerCase() === $answer.text().toLowerCase())
         {
             correct++;
         }
