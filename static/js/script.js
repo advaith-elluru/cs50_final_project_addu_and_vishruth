@@ -130,7 +130,7 @@ function chk_ws_test(number, seconds, avgTime){
     document.querySelector('#time_taken').innerHTML = seconds;
     document.querySelector('#percent_correct').innerHTML = percentCorrect;
     document.querySelector('#number_correct').innerHTML = correct_ans;
-    document.querySelector('')
+    document.querySelector('#test_submit').style.display = 'none';
     var time = seconds;
     var avg_Time = avgTime;
     // Var
