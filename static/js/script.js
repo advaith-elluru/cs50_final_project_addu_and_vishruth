@@ -153,7 +153,7 @@ function chk_ws_test(number, seconds, avgTime){
         var data = {
             "json": JSON.stringify(x)
         }
-        $ajax({type: "POST", url: "/results", data: data})
+        $.ajax({type: "POST", url: "/results", data: data})
 }
 
 document.addEventListener("DOMContentLoaded", function () {
