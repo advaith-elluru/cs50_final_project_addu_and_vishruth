@@ -91,7 +91,7 @@ function check_s_test(number, time, avgTime){
         var answer = $(this).find("#answer").text();
         var correct = 0;
 
-        if ()
+        if (client_answer.toLowerCase() === answer.toLowerCase())
         {
             correct++;
         }
@@ -100,7 +100,7 @@ function check_s_test(number, time, avgTime){
         $("#test_submit").hide();
 
         $("#number_correct").text("\xa0" + parseInt(correct) + " problems correct");
-        $("#percent_correct").text((parseInt(correct) / parseInt(pronums)).toFixed(6) * 100 + "%");
+        $("#percent_correct").text((parseInt(correct) / parseInt(number)).toFixed(6) * 100 + "%");
         $("#time_taken").text(parseFloat(time) + " seconds")
         $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime).toFixed(4) + "\xa0 seconds per problem")
 
