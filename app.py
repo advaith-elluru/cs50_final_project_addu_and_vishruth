@@ -224,7 +224,7 @@ def ws_test():
         elif not number.isdigit():
             return apology("Invalid number", 418)
         elif number > 10:
-            return apology('Too large of number' 418)
+            return apology('Too large of number', 418)
 
         rows = db.execute("SELECT * FROM ss_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
         return render_template("WS_test.html", rows = rows, number = number)
