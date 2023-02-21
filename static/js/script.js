@@ -91,7 +91,7 @@ function check_s_test(number, time, avgTime){
         var answer = $(this).find("#answer").text();
         var correct = 0;
 
-        if (client_answer === answer)
+        if (Number.)
         {
             correct++;
         }
