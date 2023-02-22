@@ -20,71 +20,69 @@
 
     <h1 class="display-1" id="test-header">Math Test</h1>
     <br>
-    <form>
-        <div class="mb-2">
-            <table style="margin:auto" id="table">
-                <thead>
-                    <tr>
-                        <th colspan="6" style="border-bottom: 3px solid black">Problem</th>
-                        <th colspan="1" id="answer_header" style="display:none; border-bottom: 3px solid black; border-left: 3px solid black"">Answer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for number in range(numbers) %}
-                        {% if decision in "2" %}
-                            <tr>
-                                <td>{{ number + 1 }} ) &nbsp</td>
-                                <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                                <td><sup>{{ decision }}</sup></td>
-                                <td>=</td>
-                                <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
-                                <td style="display:none; border-left: 3px solid black" id="answer"></td>
-                            </tr>
-                        {% else %}
-                            <tr>
-                                <td>{{ number + 1 }} ) &nbsp</td>
-                                <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                                <td>{{ decision }}  </td>
-                                <td id="two">{{ range(min, (max + 1)) | random }}</td>
-                                <td>=</td>
-                                <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
-                                <td style="display:none; border-left: 3px solid black" id="answer"></td>
-                            </tr>
-                        {% endif %}
-                    {% endfor %}
-                </tbody>
-            </table>
+    <div class="mb-2">
+        <table style="margin:auto" id="table">
+            <thead>
+                <tr>
+                    <th colspan="6" style="border-bottom: 3px solid black">Problem</th>
+                    <th colspan="1" id="answer_header" style="display:none; border-bottom: 3px solid black; border-left: 3px solid black"">Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for number in range(numbers) %}
+                    {% if decision in "2" %}
+                        <tr>
+                            <td>{{ number + 1 }} ) &nbsp</td>
+                            <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                            <td><sup>{{ decision }}</sup></td>
+                            <td>=</td>
+                            <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                            <td style="display:none; border-left: 3px solid black" id="answer"></td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td>{{ number + 1 }} ) &nbsp</td>
+                            <td id="one">{{ range(min, (max + 1)) | random }}</td>
+                            <td>{{ decision }}  </td>
+                            <td id="two">{{ range(min, (max + 1)) | random }}</td>
+                            <td>=</td>
+                            <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
+                            <td style="display:none; border-left: 3px solid black" id="answer"></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
 
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-            <table style="display:none" id="table_1">
-                <thead>
-                    <tr>
-                        <th style="border-bottom: 3px solid black" colspan="2">Results</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="border-right: 3px solid black">Number correct  &nbsp</td>
-                        <td id="number_correct"></td>
-                    </tr>
-                    <tr>
-                        <td style="border-right: 3px solid black">Percent correct  &nbsp</td>
-                        <td id="percent_correct"></td>
-                    </tr>
-                    <tr>
-                        <td style="border-right: 3px solid black">Time taken &nbsp</td>
-                        <td id="time_taken"></td>
-                    </tr>
-                    <tr>
-                        <td style="border-right: 3px solid black">Average time taken &nbsp</td>
-                        <td id="avg_time_taken"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="mb-2">
-            <button class="btn btn-primary" id="test_submit" type="button" onclick="check_m_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
-        </div>
-    </form>
+        <table style="display:none" id="table_1">
+            <thead>
+                <tr>
+                    <th style="border-bottom: 3px solid black" colspan="2">Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border-right: 3px solid black">Number correct  &nbsp</td>
+                    <td id="number_correct"></td>
+                </tr>
+                <tr>
+                    <td style="border-right: 3px solid black">Percent correct  &nbsp</td>
+                    <td id="percent_correct"></td>
+                </tr>
+                <tr>
+                    <td style="border-right: 3px solid black">Time taken &nbsp</td>
+                    <td id="time_taken"></td>
+                </tr>
+                <tr>
+                    <td style="border-right: 3px solid black">Average time taken &nbsp</td>
+                    <td id="avg_time_taken"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-2">
+        <button class="btn btn-primary" id="test_submit" type="button" onclick="check_m_test('{{ decision }}', '{{ numbers }}', seconds, avgTime)">Submit</button>
+    </div>
 {% endblock %}
