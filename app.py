@@ -245,7 +245,7 @@ def past_results():
         hi = request.form.get("hi")
 
         if choice == "all_results":
-            rows = db.execute("SELECT * FROM results WHERE user_id = ?", session.get("user_id"))
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? DESC", session.get("user_id"))
         elif choice == "best_percentage":
             if not amount:
                 return apology("Please enter amount", 407)
