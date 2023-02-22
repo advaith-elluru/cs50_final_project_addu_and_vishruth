@@ -101,7 +101,7 @@ function check_s_test(number, time, avgTime){
             $client_answer.css("background-color", "red");
         }
 
-        $client-answer.attr("disabled", "disabled");
+        $client_answer.attr("disabled", "disabled");
         $answer.show();
     })
 
