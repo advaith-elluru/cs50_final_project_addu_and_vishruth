@@ -101,15 +101,16 @@ function check_s_test(number, time, avgTime){
             $client_answer.css("background-color", "red");
         }
 
-        $answer.show()
+        $client-answer.attr("disabled", "disabled");
+        $answer.show();
     })
 
     $("#table_2 thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
     $("#number_correct").text("\xa0" + parseInt(correct) + " problems correct");
-    $("#percent_correct").text((parseInt(correct) / parseInt(number)).toFixed(6) * 100 + "%");
-    $("#time_taken").text(parseFloat(time) + " seconds")
+    $("#percent_correct").text("\xa0" + (parseInt(correct) / parseInt(number)).toFixed(6) * 100 + "%");
+    $("#time_taken").text("\xa0" + parseFloat(time) + " seconds")
     $("#avg_time_taken").text("\xa0\xa0" + parseFloat(avgTime).toFixed(4) + "\xa0 seconds per problem")
 
     $("#table_2").css("display", "inline-block");
