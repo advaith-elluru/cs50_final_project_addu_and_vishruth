@@ -34,7 +34,7 @@ function check_m_test(decision, pronums, time, avgTime)
         }
         else if (decision === "/")
         {
-            $answer.text(parseInt(one) / parseInt(two));
+            $answer.text((parseInt(one) / parseInt(two)).toFixed(4));
         }
         else if (decision === "2")
         {
