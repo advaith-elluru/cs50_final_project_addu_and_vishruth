@@ -252,13 +252,13 @@ def past_results():
                 return apology("Please enter amount", 407)
             elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY percent_correct DESC LIMIT ?", session.get("user_id"), amount)
         else:
             if not amount:
                 return apology("Please enter amount", 407)
             elif int(amount) > int(hi):
                 return apology("You haven't taken that many tests yet", 407)
-            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time_taken LIMIT ?", session.get("user_id"), hi)
+            rows = db.execute("SELECT * FROM results WHERE user_id = ? ORDER BY time_taken LIMIT ?", session.get("user_id"), amount)
 
         return render_template("past_results.html", rows = rows)
     else:
