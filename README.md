@@ -1,4 +1,7 @@
 # cs50_final_project -- An intellectual tests website by Vishruth Pesala(git-hub username: vishruth-pesala; edx username: vishruthpesala) and Advaith Elluru(git-hub username: advaith-elluru; edx username: Addu_E )
+
+#### Video URL:
+#### Description:
   This is our final project for CS50. This project is an application for the web. It is an educational website and tests 3 of the 4 core subjects in the US, math, science, and world studies.
   It is a python and HTML-based project using flask. We also used javascript and jquery to analyze the results, with SQL databases for a list of questions and user statistics. We have a fake subscription plan, which requires a valid credit card number. We don't expect anyone to use their credit card number, and highly advise against it since this is an informal project. We used PayPal's test numbers to check if our credit-checking function worked properly. We created a singular database with a wide variety of questions for our science and world studies questions. For the math questions, we used user input paired with random numbers to create a variety of math problems.
 
@@ -11,3 +14,5 @@
   The past results page pulls certain results based on user results. They choose what results they want, and based on that input, we pick those rows from the results table from our SQL database. The user can choose "All Results", "Top Score", or "Best Time." This is sent as a python request and then the pulled data from the database is sent to an HTML page, which is then displayed.
 
   The last page on our website is an extra links page, which leads to various sites on the web in which people could get extra practice for the subjects we have tests on.
+
+  This is our CS50 project.
