@@ -152,6 +152,7 @@ function chk_ws_test(number, seconds, avgTime){
     document.querySelector('#percent_correct').innerHTML = percentCorrect;
     document.querySelector('#number_correct').innerHTML = correct_ans;
     document.querySelector('#test_submit').style.display = 'none';
+    $("#anscol").show();
     var time = seconds;
     var avg_Time = avgTime;
     // Var
