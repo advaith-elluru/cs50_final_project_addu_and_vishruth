@@ -21,7 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///math2.db")
+db = SQL("sqlite:///math.db")
 
 @app.before_request
 def before_request():
