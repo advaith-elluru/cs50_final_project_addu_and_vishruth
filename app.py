@@ -266,7 +266,7 @@ def past_results():
         if len(rows) < 1:
             return apology("You didn't take any tests", 404)
         hi = len(rows)
-        return render_template("choose.html", rows = len(rows), hi = hi)
+        return render_template("choose.html", hi = hi)
 
 
 @app.route("/credit", methods=["GET", "POST"])
