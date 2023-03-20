@@ -21,6 +21,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
+#Hooray
 db = SQL("sqlite:///math.db")
 
 @app.before_request
