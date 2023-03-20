@@ -8,4 +8,4 @@
 
   Each test runs by taking user input, and running it through a python function/path that will pull questions at random from the respective table in the database. After that, we send them as inputs to an html page, which then displays the questions within a table. Underneath the question, a box for answering the question will appear. Once they answer the questions, we run their answers through a javascript or jquery function to check their answers. After checking their answers, we send their stats, such as time and percent correct, to python to upload into a SQL table through Json and Ajax. This way we save all of the results for reference again, when they check the past results page.
 
-  The past results page pulls a certain results based on user results.
+  The past results page pulls a certain results based on user results. They choose what results that they want
