@@ -121,7 +121,7 @@ def change_password():
 
         db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), session.get("user_id"))
 
-        return redirect("/")
+        return success("Thank you for submitting the required information", "Your password is now changed")
 
     else:
         return render_template("change_password.html")
@@ -129,7 +129,6 @@ def change_password():
 @app.route("/logout")
 def logout():
     session.clear()
-
     return redirect("/")
 
 @app.route("/m_test", methods=["GET", "POST"])
@@ -270,7 +269,7 @@ def credit_check():
                 db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session.get("user_id"))
                 return success("Thank you for submitting the required information", "Your credit card is now verified and added to your account")
     else:
-        return render_template("credit.html")
+        return render_template("add_credit_card.html")
 
 # extra links route
 @app.route("/extra_links", methods=["GET"])
