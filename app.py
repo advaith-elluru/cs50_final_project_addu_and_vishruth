@@ -128,7 +128,7 @@ def change_password():
 
 @app.route("/logout")
 def logout():
-    
+
     session.clear()
     return redirect("/")
 
@@ -156,7 +156,7 @@ def test():
 
         return render_template("math_test.html", numbers = int(number), max = int(max), min = int(min), decision = decision)
     else:
-        return render_template("decide.html")
+        return render_template("math_choose.html")
 
 @app.route("/results", methods=["GET", "POST"])
 @login_required
