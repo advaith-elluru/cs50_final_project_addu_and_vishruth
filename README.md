@@ -16,6 +16,6 @@
   The past results page pulls certain results based on user results. They choose what results they want, and based on that input, we pick those rows from the results table from our SQL database. The user can choose "All Results", "Top Score", or "Best Time." For the "Top Score" and "Best Time" options, the user is supposed to input the number of results that they want. This is sent as a python request and then the pulled data from the database is sent to an HTML page, which is then displayed.
 
   The last page on our website is an extra links page, which leads to various sites on the web in which people could get extra practice for the subjects we have tests on.
-  We will now go more into depth about each file that our project uses, since 
+  We will now go more into depth about each file that our project uses, now that you have a general idea of what our website does, and its basic functionality.
 
   This is our CS50 project.
