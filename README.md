@@ -21,6 +21,6 @@
   app.py
     app.py is our main python file. It contains all of the code required for logins, registers, credit-card additions, and request processing. It is our bridge to our SQL database, where we save all user-data and questions that the user will be tested on. app.py allows the website to be run as a flask application, and not a static website. Within app.py we have many paths, each which serve a different function. Most of the paths in app.py will have atleast one line of code that deals with SQL requests.
     A few paths include:
-    /login: this path deals with requests from the login page, and it checks wether the person trying to sign in already has an account, and wether he is using the right credentials to sign into an account. You only sign in when 
+    /login: this path deals with requests from the login page, and it checks wether the person trying to sign in already has an account, and wether he is using the right credentials to sign into an account. You only sign in when you use the POST path. If you use the GET path, you will be redirected to the login page.
 
   This is our CS50 project.
