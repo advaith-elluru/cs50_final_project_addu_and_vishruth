@@ -8,7 +8,7 @@ import random
 
 import json
 
-# COnfigure application
+# Configure application
 app = Flask(__name__)
 
 # Ensure templates are auto-reloaded
@@ -20,7 +20,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-#Hoorah
 db = SQL("sqlite:///math.db")
 
 @app.before_request
@@ -186,7 +185,7 @@ def sci_test():
             return apology("Invalid number", 418)
 
         rows = db.execute("SELECT * FROM sci_questions WHERE type = ? ORDER BY random() LIMIT ?", category, number)
-        return render_template("science.html", rows = rows, number = number)
+        return render_template("sci_test.html", rows = rows, number = number)
 
     else:
         return render_template("sci_choose.html")
@@ -215,7 +214,7 @@ def ws_test():
             return apology('Too large of number', 418)
 
         rows = db.execute("SELECT * FROM ss_questions WHERE type = ? AND difficulty = ? ORDER BY random() LIMIT ?", category, difficulty, number)
-        return render_template("WS_test.html", rows = rows, number = number)
+        return render_template("ws_test.html", rows = rows, number = number)
     else:
         return render_template("ws_choose.html")
 
@@ -253,7 +252,7 @@ def past_results():
         if len(rows) < 1:
             return apology("You didn't take any tests", 404)
         hi = len(rows)
-        return render_template("choose.html", hi = hi)
+        return render_template("pr_choose.html", hi = hi)
 
 
 @app.route("/credit", methods=["GET", "POST"])
@@ -276,4 +275,4 @@ def credit_check():
 @app.route("/extra_links", methods=["GET"])
 @login_required
 def extra_links():
-    return render_template("extra.html")
+    return render_template("extra_links.html")
