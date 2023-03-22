@@ -19,6 +19,8 @@
   We will now go more into depth about each file that our project uses, now that you have a general idea of what our website does, and its basic functionality.
 
   app.py
-    app.py is our python file. It contains all of the code required for logins, registers, credit-card additions, and request processing. It is our bridge to our SQL database, where we save all user-data and questions that the user will be tested on.
+    app.py is our main python file. It contains all of the code required for logins, registers, credit-card additions, and request processing. It is our bridge to our SQL database, where we save all user-data and questions that the user will be tested on. app.py allows the website to be run as a flask application, and not a static website. Within app.py we have many paths, each which serve a different function. Most of the paths in app.py will have atleast one line of code that deals with SQL requests.
+    A few functions include:
+    
 
   This is our CS50 project.
