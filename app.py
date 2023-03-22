@@ -268,7 +268,7 @@ def credit_check():
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
                 db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session.get("user_id"))
-                return success("Thank you for submitting the required information", "")
+                return success("Thank you for submitting the required information", "Your credit card is now verified and added to your account")
     else:
         return render_template("credit.html")
 
