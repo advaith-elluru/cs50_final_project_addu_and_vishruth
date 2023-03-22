@@ -18,4 +18,7 @@
   The last page on our website is an extra links page, which leads to various sites on the web in which people could get extra practice for the subjects we have tests on.
   We will now go more into depth about each file that our project uses, now that you have a general idea of what our website does, and its basic functionality.
 
+  app.py
+    app.py is our python file. It contains all of the code required for logins, registers, credit-card additions, and request processing. It is our bridge to our SQL database, where we save all user-data and questions that the user will be tested on.
+
   This is our CS50 project.
