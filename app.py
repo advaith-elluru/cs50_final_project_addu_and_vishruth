@@ -264,12 +264,11 @@ def credit_check():
         if not credit_num or credit_num.isdigit() == False:
             return apology("Please enter proper credit card number", 400)
         else:
-
             if check_credit(credit_num) == False:
                 return apology("This number is either incorrect or unaccepted", 400)
             else:
                 db.execute("UPDATE users SET credit_number = ? WHERE id = ?", credit_num, session.get("user_id"))
-                return render_template("accepted_credit.html")
+                return success("Thank you for submitting the required information", "")
     else:
         return render_template("credit.html")
 
