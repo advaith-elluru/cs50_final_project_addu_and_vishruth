@@ -128,6 +128,7 @@ def change_password():
 
 @app.route("/logout")
 def logout():
+    
     session.clear()
     return redirect("/")
 
