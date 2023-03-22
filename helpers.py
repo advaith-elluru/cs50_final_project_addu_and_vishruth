@@ -16,7 +16,7 @@ def apology(message, code):
     return render_template("apology.html", message = message, code = code)
 
 def success(message1, message2):
-    return
+    return render_template("success.html", message1 = message1, message2 = message2)
 
 def check_credit(credit):
     if credit.isdigit() == False:
