@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block main %}
+
+    <!-- Timer -->
+
     <script>
     $(document).ready(function() {
         startTime = Date.now();
@@ -17,6 +20,9 @@
         });
     });
     </script>
+
+    <!-- World studies test -->
+
     <h1 class="display-1">Test : World Studies</h1>
     <table id="table_2" style="margin:auto">
         <thead>
@@ -43,6 +49,8 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <!-- Results table -->
 
     <table style="display:none" id="table_3">
         <thead>
@@ -74,6 +82,7 @@
         <br><br>
         <button class="btn btn-primary" id="test_submit" type="button" onclick="chk_ws_test('{{ number }}', seconds, avgTime)">Submit</button>
     </div>
+    
 {% endblock %}
 
 

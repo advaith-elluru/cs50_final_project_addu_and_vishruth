@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block main %}
+
+    <!-- Timer -->
+
     <script>
     $(document).ready(function() {
         startTime = Date.now();
@@ -17,6 +20,8 @@
         });
     });
     </script>
+
+    <!-- Science test -->
 
     <h1 id="test-header" class="display-1">Test : Science</h1>
     <div class="mb-2">
@@ -39,6 +44,8 @@
         </table>
 
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+        <!-- Results table -->
 
         <table style="display:none" id="table_3">
             <thead>
@@ -69,4 +76,5 @@
     <div class="mb-2">
         <button id="test_submit" class="btn btn-primary" onclick="check_s_test('{{ number }}', seconds, avgTime)" type="button">Submit</button>
     </div>
+    
 {% endblock %}
