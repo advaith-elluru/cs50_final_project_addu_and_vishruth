@@ -15,6 +15,8 @@ def login_required(f):
 def apology(message, code):
     return render_template("apology.html", message = message, code = code)
 
+def su
+
 def check_credit(credit):
     if credit.isdigit() == False:
         return apology("invalid number")
