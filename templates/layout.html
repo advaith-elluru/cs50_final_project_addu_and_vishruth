@@ -21,7 +21,6 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-info py-4">
         <div class="container-fluid">
-            <!-- shows the brand logo-->
             <a class="navbar-brand" href="/"><img src="static/img/favicon.ico" alt="BRAND LOGO" title="logo"></a>
             <div class="collapse navbar-collapse">
                 {% if session["user_id"] %}
@@ -30,13 +29,11 @@
                         <li class="nav-item"><a class="nav-link" href="/stest">Science Test</a></li>
                         <li class="nav-item"><a class="nav-link" href="/wtest">SS Test</a></li>
                         <li class="nav-item"><a class="nav-link" href="/past_results">Past Results</a></li>
-                        <!-- list item for extra -->
                         <li class="nav-item"><a class="nav-link" href="/extra_links">Extra Links</a></li>
 
                     </ul>
                     <ul class="navbar-nav ms-auto mt-2">
                         <li class="nav-item"><a class="nav-link" href="/change_password">Change Password</a></li>
-                        <!-- credit card add -->
                         <li class="nav-item"><a class="nav-link" href="/credit">Add Credit Card</a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                     </ul>
