@@ -271,7 +271,6 @@ def credit_check():
     else:
         return render_template("add_credit_card.html")
 
-# extra links route
 @app.route("/extra_links", methods=["GET"])
 @login_required
 def extra_links():
