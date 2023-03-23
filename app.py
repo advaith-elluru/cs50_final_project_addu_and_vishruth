@@ -46,7 +46,6 @@ def index():
 # Login route
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
     session.clear()
 
     if request.method == "POST":
@@ -73,7 +72,6 @@ def login():
 # Register route
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
     session.clear()
 
     if request.method == "POST":
@@ -106,7 +104,6 @@ def register():
 @app.route("/change_password", methods=["GET", "POST"])
 @login_required
 def change_password():
-
     if request.method == "POST":
         old_password = request.form.get("old_password")
         new_password = request.form.get("new_password")
@@ -134,7 +131,6 @@ def change_password():
 # Logout route
 @app.route("/logout")
 def logout():
-
     session.clear()
     return redirect("/")
 
