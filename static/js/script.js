@@ -1,3 +1,5 @@
+// Past results
+
 function choose()
 {
     var x = document.getElementById("choice");
