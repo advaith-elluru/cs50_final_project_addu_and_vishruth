@@ -120,9 +120,9 @@ def change_password():
         elif not new_password:
             return apology("Please type a new password", 403)
         elif not confirmation:
-            return apology("Please retype your new password")
+            return apology("Please retype your new password", 403)
         elif new_password != confirmation:
-            return apology("Please retype the same password as you typed in the previous field")
+            return apology("Please retype the same password as you typed in the previous field", 403)
 
         db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), session.get("user_id"))
 
