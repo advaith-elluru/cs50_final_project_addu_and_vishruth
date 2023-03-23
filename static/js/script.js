@@ -1,4 +1,4 @@
-// Past results
+// Show number input in past results
 
 function choose()
 {
@@ -14,9 +14,14 @@ function choose()
     }
 }
 
+// Check math test
+
 function check_m_test(decision, pronums, time, avgTime)
 {
     $("#table tr").each(function() {
+
+        // Check decision
+
         one = $(this).find("#one").text();
         two = $(this).find("#two").text();
 
@@ -47,6 +52,9 @@ function check_m_test(decision, pronums, time, avgTime)
     var correct = 0;
 
     $("#table tbody tr").each(function() {
+
+        // Check answers
+
         client_answer = $(this).find("#client_answer").val();
         answer = $(this).find("#answer").text();
 
@@ -67,6 +75,8 @@ function check_m_test(decision, pronums, time, avgTime)
         $answer.show();
     });
 
+    // Show all items and get results
+
     $("#table thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
@@ -80,6 +90,8 @@ function check_m_test(decision, pronums, time, avgTime)
     $("#table_1").show();
     $("#test-header").text("Results");
 
+    // Pass results to results route
+
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(pronums), "percent_correct": (parseInt(correct) / parseInt(pronums)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Math"};
     var data = {
         "json": JSON.stringify(x)
@@ -87,8 +99,13 @@ function check_m_test(decision, pronums, time, avgTime)
     $.ajax({type: "POST", url: "/results", data: data});
 }
 
+// Check science test
+
 function check_s_test(number, time, avgTime){
     var correct = 0;
+
+    // Check answers
+
     $("#table_2 tbody tr").each(function() {
         var $client_answer = $(this).find("#sci_answer");
         var $answer = $(this).find("#answer");
@@ -107,6 +124,8 @@ function check_s_test(number, time, avgTime){
         $answer.show();
     })
 
+    // Show items and get results
+
     $("#table_2 thead tr #answer_header").css("display", "block");
     $("#test_submit").hide();
 
@@ -120,6 +139,8 @@ function check_s_test(number, time, avgTime){
     $("#table_3").show();
     $("#test-header").text("Results");
 
+    //Pass results to results route
+
     x = {"number_correct": parseInt(correct), "number_of_questions": parseInt(number), "percent_correct": (parseInt(correct) / parseInt(number)).toFixed(6) * 100, "time": parseFloat(time), "avg_time": parseFloat(avgTime).toFixed(4), "category": "Science"};
     var data = {
         "json": JSON.stringify(x)
@@ -127,11 +148,14 @@ function check_s_test(number, time, avgTime){
     $.ajax({type: "POST", url: "/results", data: data})
 }
 
+// Check world studies test
 
 function chk_ws_test(number, seconds, avgTime){
     let client_answer = document.querySelectorAll('#ans');
     let answer = document.querySelectorAll('#answer');
     var correct_ans = 0;
+
+    // Check answers
 
     for(var i = 0; i < client_answer.length; i++){
         let value_ans = client_answer[i].value;
@@ -148,6 +172,8 @@ function chk_ws_test(number, seconds, avgTime){
         answer[i].style.display = 'block';
     }
 
+    // Show items and get results
+
     percentCorrect = (correct_ans/number).toFixed(6) * 100;
     document.querySelector('#avg_time_taken').innerHTML = avgTime;
     document.querySelector('#time_taken').innerHTML = seconds;
@@ -156,10 +182,12 @@ function chk_ws_test(number, seconds, avgTime){
     document.querySelector('#test_submit').style.display = 'none';
     $("#anscol").show();
     $("#table_5").css("display", "inline-block")
+    document.querySelector('#table_6').style.display = 'inline-block';
 
     var time = seconds;
     var avg_Time = avgTime;
-    document.querySelector('#table_6').style.display = 'inline-block';
+
+    // Pass results to results route
 
     x = {"number_correct": parseInt(correct_ans), "number_of_questions": parseInt(number), "percent_correct": percentCorrect, "time": parseFloat(time), "avg_time": parseFloat(avg_Time).toFixed(4), "category": "Social Studies"};
         var data = {
@@ -167,6 +195,8 @@ function chk_ws_test(number, seconds, avgTime){
         }
         $.ajax({type: "POST", url: "/results", data: data})
 }
+
+// DOM content loaded event listener
 
 document.addEventListener("DOMContentLoaded", function () {
 
