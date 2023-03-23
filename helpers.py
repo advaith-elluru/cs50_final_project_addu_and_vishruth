@@ -4,6 +4,7 @@ import requests
 from flask import redirect, render_template, request, session
 from functools import wraps
 
+# Checks if user is logged in
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -12,17 +13,20 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Apology message
 def apology(message, code):
     return render_template("apology.html", message = message, code = code)
 
+# Success message
 def success(message1, message2):
     return render_template("success.html", message1 = message1, message2 = message2)
 
+# Checks if credit card is correct
 def check_credit(credit):
     if credit.isdigit() == False:
         return apology("invalid number")
     n = len(credit)
-    # checks if legit
+    # Checks if legit
     if n < 10:
         return False
     answer = True
@@ -35,6 +39,7 @@ def check_credit(credit):
     doubledigit = credit[0:2]
 
     credit_number = int(credit)
+
     # Luhn's algorithm
     while credit_number >= 1:
         tempremainder = credit_number % 10
@@ -66,7 +71,7 @@ def check_credit(credit):
     else:
         answer = False
 
-    # gives last results of INVALID or AMEX or VISA or MASTERCARD based on #of digits and starting digits if valid
+    # Gives last results of INVALID or AMEX or VISA or MASTERCARD based on #of digits and starting digits if valid
     if answer == False:
         return False
 
@@ -82,4 +87,3 @@ def check_credit(credit):
 
     else:
         return False
-# Hello sjktj l
