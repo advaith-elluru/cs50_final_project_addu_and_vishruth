@@ -27,17 +27,17 @@
     <table id="table_2" style="margin:auto">
         <thead>
             <tr>
-                <th colspan="3" class="display-6">Question</th>
-                <th id="anscol" class="display-6" style="display:none">Answer</th>
+                <th colspan="3" class="display-6" style="border-right: 3px solid black; border-bottom: 3px solid black">Question</th>
+                <th id="anscol" class="display-6" style="display:none; border-bottom: 3px solid black">Answer</th>
             </tr>
         </thead>
         <tbody>
             {% for row in rows %}
                 <tr>
-                    <td id="question">{{ row.question }}</td>
+                    <td id="question" style="border-right: 3px solid black">{{ row.question }}</td>
                 </tr>
                 <tr>
-                    <td><select name="ans" id = 'ans' class="form-select">
+                    <td style="border-right: 3px solid black"><select name="ans" id = 'ans' class="form-select">
                         <option value="None" disabled selected>Answer</option>
                         <option value="{{row.choice_1}}">{{row.choice_1}}</option>
                         <option value="{{row.choice_2}}">{{row.choice_2}}</option>
@@ -45,7 +45,7 @@
                     </select></td>
                     <td></td><td></td><td id="answer" style="display:none">{{ row.answer }}</td>
                 </tr>
-                <tr><td><br></td></tr>
+                <tr><td style="border-right: 3px solid black"><br></td></tr>
             {% endfor %}
         </tbody>
     </table>
@@ -55,8 +55,7 @@
     <table style="display:none" id="table_3">
         <thead>
             <tr>
-                <th style="border-bottom: 3px solid black"
-                colspan="2">Results</th>
+                <th style="border-bottom: 3px solid black" colspan="2">Results</th>
             </tr>
         </thead>
         <tbody>
