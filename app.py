@@ -22,11 +22,13 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///math.db")
 
+# Configure session time
 @app.before_request
 def before_request():
     session.permanent = True
     app.permanent_session_lifetime = datetime.timedelta(minutes=120)
 
+# Configure cache
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
@@ -35,11 +37,13 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+# Home route
 @app.route("/")
 @login_required
 def index():
     return render_template("index.html")
 
+# Login route
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
@@ -66,6 +70,7 @@ def login():
     else:
         return render_template("login.html")
 
+# Register route
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
@@ -97,6 +102,7 @@ def register():
     else:
         return render_template("register.html")
 
+# Change password route
 @app.route("/change_password", methods=["GET", "POST"])
 @login_required
 def change_password():
@@ -125,12 +131,14 @@ def change_password():
     else:
         return render_template("change_password.html")
 
+# Logout route
 @app.route("/logout")
 def logout():
 
     session.clear()
     return redirect("/")
 
+# Math route
 @app.route("/m_test", methods=["GET", "POST"])
 @login_required
 def test():
@@ -157,6 +165,7 @@ def test():
     else:
         return render_template("math_choose.html")
 
+# Results route
 @app.route("/results", methods=["GET", "POST"])
 @login_required
 def results():
@@ -167,6 +176,7 @@ def results():
                 session.get("user_id"), y["number_correct"], y["number_of_questions"], y["time"], datetime.datetime.now(), y["percent_correct"], y["avg_time"], y["category"])
     return ""
 
+# Science route
 @app.route("/stest", methods=["GET", "POST"])
 @login_required
 def sci_test():
@@ -190,6 +200,7 @@ def sci_test():
     else:
         return render_template("sci_choose.html")
 
+# World studies route
 @app.route("/wtest", methods=["GET", "POST"])
 @login_required
 def ws_test():
@@ -218,6 +229,7 @@ def ws_test():
     else:
         return render_template("ws_choose.html")
 
+# Past results route
 @app.route("/past_results", methods=["GET", "POST"])
 @login_required
 def past_results():
@@ -254,7 +266,7 @@ def past_results():
         hi = len(rows)
         return render_template("pr_choose.html", hi = hi)
 
-
+# Credit card route
 @app.route("/credit", methods=["GET", "POST"])
 @login_required
 def credit_check():
@@ -271,6 +283,7 @@ def credit_check():
     else:
         return render_template("add_credit_card.html")
 
+# Extra links route
 @app.route("/extra_links", methods=["GET"])
 @login_required
 def extra_links():
