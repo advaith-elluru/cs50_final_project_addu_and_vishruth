@@ -35,6 +35,9 @@
             </thead>
             <tbody>
                 {% for number in range(numbers) %}
+
+                <!-- If the decision is squaring -->
+
                     {% if decision in "2" %}
                         <tr>
                             <td>{{ number + 1 }} ) &nbsp</td>
@@ -44,6 +47,9 @@
                             <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
                             <td style="display:none; border-left: 3px solid black" id="answer"></td>
                         </tr>
+
+                <!-- If the decision is not squaring -->
+
                     {% else %}
                         <tr>
                             <td>{{ number + 1 }} ) &nbsp</td>
