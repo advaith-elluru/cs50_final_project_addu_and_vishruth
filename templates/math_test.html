@@ -30,7 +30,7 @@
             <thead>
                 <tr>
                     <th colspan="6" class="display-6" style="border-bottom: 3px solid black">Problem</th>
-                    <th colspan="1" class="display-6" id="answer_header" style="display:none; border-bottom: 3px solid black; border-left: 3px solid black">Answer</th>
+                    <th colspan="1" class="display-6" id="answer_header" style="display:none; border-bottom: 3px solid black; border-left: 3px solid black">&nbsp Answer</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{ number + 1 }} ) &nbsp</td>
                             <td id="one">{{ range(min, (max + 1)) | random }}</td>
-                            <td>{{ decision }}  </td>
+                            <td>{{ decision }}</td>
                             <td id="two">{{ range(min, (max + 1)) | random }}</td>
                             <td>=</td>
                             <td><input autocomplete="off" class="form-control mx-auto" id="client_answer" placeholder="Answer" type="number"></td>
